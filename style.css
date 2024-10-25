@@ -42,28 +42,6 @@ body {
     font-style: italic;
 }
 
-/* Adjust layout for mobile devices */
-@media (max-width: 768px) {
-    #welcome-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    #welcome-section img {
-        margin-right: 0;
-        margin-bottom: 1.5rem;
-        max-width: 80%;
-    }
-
-    #welcome-text h1 {
-        font-size: 2rem;
-    }
-
-    #welcome-text p {
-        font-size: 1rem;
-    }
-}
-
 /* Navigation Styling */
 nav ul {
     display: flex;
@@ -71,6 +49,7 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 1rem 0;
+    background-color: #333; /* Add background color to make the navigation visible */
 }
 
 nav ul li {
@@ -127,4 +106,26 @@ footer {
     padding: 1rem;
     font-size: 0.9rem;
     margin-top: 2rem;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    #welcome-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #welcome-section img {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+        max-width: 80%;
+    }
+
+    #welcome-text h1 {
+        font-size: 2rem;
+    }
+
+    #welcome-text p {
+        font-size: 1rem;
+    }
 }
