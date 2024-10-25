@@ -6,50 +6,53 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* Header Styling */
 header {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
+    justify-content: center;
     background-color: #e50914;
     color: #ffffff;
-    padding: 1rem;
+    padding: 2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-in-out;
 }
 
 #team-logo {
     width: 80px;
     height: auto;
-    margin-right: 1rem;
+    margin-right: 1.5rem;
+    animation: slideInFromLeft 1s ease-in-out;
 }
 
 header h1 {
-    font-size: 1.5rem;
-    margin: 0.5rem 0;
-    font-weight: bold;
+    font-size: 2.5rem;
+    margin: 0;
+    animation: fadeIn 2s ease-in-out;
 }
 
 header p {
+    font-size: 1.2rem;
     margin: 0;
     font-style: italic;
-    font-size: 1rem;
+    animation: fadeIn 3s ease-in-out;
 }
 
-/* Navigation Styling */
+/* Navigation Menu */
 nav ul {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
     list-style: none;
-    padding: 0;
-    margin: 0;
+    padding: 1rem 0;
+    background-color: #333;
+    animation: fadeIn 2s ease-in-out;
 }
 
 nav ul li {
-    margin: 0.5rem 0;
+    margin: 0 1rem;
 }
 
 nav ul li a {
@@ -59,70 +62,49 @@ nav ul li a {
     padding: 0.5rem 1rem;
     background-color: #444;
     border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a:hover {
     background-color: #ffffff;
     color: #e50914;
-    border-radius: 5px;
+    transform: translateY(-5px); /* Adds a subtle lift on hover */
 }
 
-/* Section Styling */
-section {
-    padding: 1rem;
-    margin: 0 auto;
-    width: 90%;
-}
-
-/* Highlight Section Styling */
+/* Highlights Section */
 .highlight-section {
     background-color: #1e1e1e;
     border: 1px solid #e50914;
     border-radius: 5px;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    animation: fadeInUp 1.5s ease-in-out;
 }
 
 .highlight-section h2 {
     color: #e50914;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1.5s ease-in-out;
 }
 
 .highlight-section a {
     display: inline-block;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     text-decoration: none;
     color: #e50914;
     font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: 1px solid #e50914;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .highlight-section a:hover {
-    text-decoration: underline;
-}
-
-/* Table Styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #1e1e1e;
-    color: #ffffff;
-    font-size: 0.9rem;
-}
-
-table, th, td {
-    border: 1px solid #e50914;
-    padding: 0.5rem;
-    text-align: center;
-}
-
-thead {
     background-color: #e50914;
     color: #ffffff;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #2a2a2a;
+    transform: scale(1.05); /* Button grows slightly on hover */
 }
 
 /* Footer Styling */
@@ -130,46 +112,39 @@ footer {
     background-color: #333;
     color: #ffffff;
     text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-    margin-top: 2rem;
+    padding: 1.5rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Media Queries for Responsiveness */
-@media (min-width: 600px) {
-    /* Adjust layout for larger mobile devices and tablets */
+@media (max-width: 768px) {
     header {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
+        flex-direction: column;
+        text-align: center;
     }
-    
+
     nav ul {
-        flex-direction: row;
-        align-items: center;
-    }
-    
-    section {
-        width: 80%;
+        flex-direction: column;
+        padding: 0;
     }
 
-    header h1 {
-        font-size: 2rem;
-    }
-}
-
-@media (min-width: 768px) {
-    /* Adjust layout for small desktops and up */
-    section {
-        width: 75%;
-    }
-    
-    table {
-        font-size: 1rem;
-    }
-
-    nav ul li a {
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
+    nav ul li {
+        margin: 0.5rem 0;
     }
 }
