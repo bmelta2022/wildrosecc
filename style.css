@@ -35,7 +35,45 @@ header p {
     font-style: italic;
 }
 
-/* Horizontal Menu Styling */
+/* Vertical Menu Styling for Home Page */
+.vertical-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    background-color: #1e1e1e;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.vertical-menu li {
+    margin: 1rem 0;
+}
+
+.vertical-menu li a {
+    display: block;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #e50914;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    width: 80%;
+    text-align: center;
+}
+
+.vertical-menu li a:hover {
+    color: #e50914;
+    background-color: #ffffff;
+    border-color: #e50914;
+    transform: translateY(-5px);
+}
+
+/* Horizontal Menu Styling for Other Pages */
 .horizontal-menu {
     display: flex;
     justify-content: center;
@@ -64,75 +102,6 @@ header p {
     color: white;
 }
 
-/* Narrower Top Performers Banner */
-#top-performers {
-    background-color: #1e1e1e;
-    color: #ffffff;
-    padding: 0.5rem 0; /* Reduce padding for a narrower appearance */
-    text-align: center;
-    width: 100%;
-}
-
-.carousel {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    height: 60px; /* Reduced height for a narrower banner */
-    overflow: hidden;
-    margin: 0 auto;
-}
-
-.carousel-item {
-    opacity: 0;
-    transition: opacity 1s ease;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-color: #333;
-    padding: 0.5rem; /* Reduce padding */
-    height: 100%; /* Match carousel height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.carousel-item.active {
-    opacity: 1;
-}
-
-.carousel-item h3 {
-    font-size: 1rem;
-    margin: 0;
-    color: #e50914;
-}
-
-.carousel-item p {
-    font-size: 0.9rem;
-    margin: 0 0 0 0.5rem;
-}
-
-/* Carousel Dots */
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 0.5rem;
-}
-
-.dot {
-    height: 8px;
-    width: 8px;
-    margin: 0 5px;
-    background-color: #444;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.3s;
-}
-
-.dot.active {
-    background-color: #e50914;
-}
-
 /* Table Styling for All Pages */
 table {
     width: 100%;
@@ -157,31 +126,10 @@ tbody tr:nth-child(even) {
     background-color: #2a2a2a;
 }
 
-/* Table Hover Effects */
-table tbody tr:hover {
-    background-color: #444;
-    transition: background-color 0.3s ease;
-}
-
 /* Footer Styling */
 footer {
     background-color: #333;
     color: #ffffff;
     text-align: center;
     padding: 1.5rem;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    nav ul li a {
-        width: 90%;
-    }
-
-    table {
-        font-size: 0.9rem;
-    }
-
-    th, td {
-        padding: 0.5rem;
-    }
 }
