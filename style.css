@@ -100,6 +100,31 @@ section {
     background-color: #2a2a2a;
 }
 
+/* Schedule Table Styling */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+.schedule-table th, .schedule-table td {
+    border: 1px solid #e50914;
+    padding: 0.8rem;
+    text-align: center;
+}
+
+.schedule-table th {
+    background-color: #e50914;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.schedule-table tbody tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
 /* Highlight Section Styling */
 .highlight-section {
     background-color: #1e1e1e;
