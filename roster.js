@@ -1,29 +1,26 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Players for both T20 and 35 Overs, from the Excel data
-    const sharedRoster = [
-        { name: "Shahbaz Khattar", team: "Wildrose Cricket Club" },
-        { name: "Shahood Ahmed", team: "Wildrose Cricket Club" },
-        { name: "Rabi Arif", team: "Wildrose Cricket Club" },
-        { name: "Iqbal Usman", team: "Wildrose Cricket Club" },
-        { name: "Mahmood Bilal", team: "Wildrose Cricket Club" },
-        { name: "Raja Shakeel", team: "Wildrose Cricket Club" },
-        { name: "Nauman Malik", team: "Wildrose Cricket Club" },
-        { name: "Kamal Sarna", team: "Wildrose Cricket Club" },
-        { name: "Shahbaz Haider", team: "Wildrose Cricket Club" },
-        { name: "Sulman Sheikh", team: "Wildrose Cricket Club" },
-        { name: "Aamir Nazir", team: "Wildrose Cricket Club" },
-        { name: "Farhan Pervez", team: "Wildrose Cricket Club" },
-        { name: "Khurram Jarral", team: "Wildrose Cricket Club" },
-        { name: "Abhinav Arora", team: "Wildrose Cricket Club" },
-        { name: "Sultan Sheikh", team: "Wildrose Cricket Club" },
-        { name: "Khurshid Sheikh", team: "Wildrose Cricket Club" },
-        { name: "Karan Baath", team: "Wildrose Cricket Club" },
-        { name: "Usman Khawaja", team: "Wildrose Cricket Club" },
-        { name: "Jawad Hussain", team: "Wildrose Cricket Club" },
-        { name: "Daksh Khan Floater", team: "Wildrose Cricket Club" },
-        { name: "Abi Floater", team: "Wildrose Cricket Club" },
-        { name: "Fahad Floater", team: "Wildrose Cricket Club" },
-        { name: "Adi Floater", team: "Wildrose Cricket Club" }
+    // Complete Team Roster for both T20 and 35 Over matches
+    const teamRoster = [
+        { name: "Farhan Pervez", role: "Captain" },
+        { name: "Sulman Sheikh", role: "Vice Captain & Keeper" },
+        { name: "Abhinav Arora", role: "All-rounder" },
+        { name: "Shahood Ahmed", role: "Bowler" },
+        { name: "Rabi Arif", role: "Batsman" },
+        { name: "Iqbal Usman", role: "Bowler" },
+        { name: "Mahmood Bilal", role: "All-rounder" },
+        { name: "Raja Shakeel", role: "Batsman" },
+        { name: "Nauman Malik", role: "Bowler" },
+        { name: "Kamal Sarna", role: "Batsman" },
+        { name: "Shahbaz Haider", role: "Bowler" },
+        { name: "Aamir Nazir", role: "Batsman" },
+        { name: "Shahbaz Khattar", role: "All-rounder" },
+        { name: "Khurshid Sheikh", role: "Batsman" },
+        { name: "Usman Khawaja", role: "Batsman" },
+        { name: "Jawad Hussain", role: "Bowler" },
+        { name: "Daksh Khan Floater", role: "Batsman" },
+        { name: "Abi Floater", role: "Bowler" },
+        { name: "Fahad Floater", role: "All-rounder" },
+        { name: "Adi Floater", role: "Bowler" }
     ];
 
     // Function to render the roster for a given element and players list
@@ -31,14 +28,12 @@ document.addEventListener("DOMContentLoaded", function() {
         const rosterElement = document.getElementById(elementId);
         roster.forEach(player => {
             const listItem = document.createElement("li");
-            listItem.textContent = `${player.name} - ${player.team}`;
+            listItem.textContent = `${player.name} - ${player.role}`;
             rosterElement.appendChild(listItem);
         });
     }
 
-    // Populate T20 Roster with the shared roster data
-    renderRoster("t20-roster", sharedRoster);
-
-    // Populate 35 Over Roster with the shared roster data
-    renderRoster("overs35-roster", sharedRoster);
+    // Populate T20 Roster and 35 Over Roster with the same team data
+    renderRoster("t20-roster", teamRoster);
+    renderRoster("overs35-roster", teamRoster);
 });
