@@ -75,6 +75,31 @@ section {
     width: 90%;
 }
 
+/* Roster Table Styling */
+.roster-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+.roster-table th, .roster-table td {
+    border: 1px solid #e50914;
+    padding: 0.8rem;
+    text-align: center;
+}
+
+.roster-table th {
+    background-color: #e50914;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.roster-table tbody tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
 /* Highlight Section Styling */
 .highlight-section {
     background-color: #1e1e1e;
@@ -99,30 +124,6 @@ section {
 
 .highlight-section a:hover {
     text-decoration: underline;
-}
-
-/* Table Styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #1e1e1e;
-    color: #ffffff;
-    font-size: 0.9rem;
-}
-
-table, th, td {
-    border: 1px solid #e50914;
-    padding: 0.5rem;
-    text-align: center;
-}
-
-thead {
-    background-color: #e50914;
-    color: #ffffff;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #2a2a2a;
 }
 
 /* Footer Styling */
