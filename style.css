@@ -41,19 +41,20 @@ header p {
 nav ul {
     display: flex;
     flex-direction: column; /* Vertical stacking */
-    align-items: center; /* Centering the buttons */
+    align-items: center;    /* Centering buttons horizontally */
+    justify-content: center;
     list-style: none;
-    padding: 2rem 0;
-    background-color: #333;
+    padding: 0;
+    margin: 2rem 0;
 }
 
 nav ul li {
-    margin: 1rem 0;
+    margin: 1rem 0; /* Adds space between buttons */
 }
 
 /* Styling for Buttons */
 nav ul li a {
-    display: inline-block;
+    display: block;  /* Block level so they stack */
     padding: 1rem 2rem;
     font-weight: bold;
     font-size: 1rem;
@@ -64,7 +65,7 @@ nav ul li a {
     border: 2px solid transparent;
     border-radius: 10px;
     transition: all 0.3s ease;
-    width: 80%; /* Make the buttons stretch horizontally */
+    width: 80%; /* Stretch to 80% of the container's width */
     text-align: center;
 }
 
@@ -135,5 +136,9 @@ footer {
 
     th, td {
         padding: 0.5rem;
+    }
+
+    .main-button {
+        width: 90%; /* Ensure buttons fit better on smaller screens */
     }
 }
