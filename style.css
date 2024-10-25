@@ -35,11 +35,11 @@ header p {
     font-style: italic;
 }
 
-/* Narrow Top Performers Banner */
+/* Narrower Top Performers Banner */
 #top-performers {
     background-color: #1e1e1e;
     color: #ffffff;
-    padding: 1rem 0;
+    padding: 0.5rem 0; /* Reduce padding for a narrower appearance */
     text-align: center;
     width: 100%;
 }
@@ -48,7 +48,7 @@ header p {
     position: relative;
     width: 100%;
     max-width: 100%;
-    height: 100px;
+    height: 60px; /* Reduced height for a narrower banner */
     overflow: hidden;
     margin: 0 auto;
 }
@@ -61,13 +61,29 @@ header p {
     top: 0;
     left: 0;
     background-color: #333;
-    padding: 1rem;
+    padding: 0.5rem; /* Reduce padding */
+    height: 100%; /* Match carousel height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .carousel-item.active {
     opacity: 1;
 }
 
+.carousel-item h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: #e50914;
+}
+
+.carousel-item p {
+    font-size: 0.9rem;
+    margin: 0 0 0 0.5rem;
+}
+
+/* Carousel Dots */
 .carousel-dots {
     display: flex;
     justify-content: center;
@@ -75,8 +91,8 @@ header p {
 }
 
 .dot {
-    height: 10px;
-    width: 10px;
+    height: 8px;
+    width: 8px;
     margin: 0 5px;
     background-color: #444;
     border-radius: 50%;
