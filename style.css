@@ -1,0 +1,123 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #121212;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    align-items: center;
+    background-color: #e50914;
+    color: #ffffff;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#team-logo {
+    width: 80px;
+    height: auto;
+    margin-right: 1rem;
+}
+
+/* Header Title and Description */
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+header p {
+    margin: 0;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+/* Navigation Styling */
+nav {
+    background-color: #121212; /* Darker background for the nav bar */
+    padding: 0.5rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #ffffff; /* White text for high contrast */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    background-color: #333; /* Dark grey background for nav buttons */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+nav ul li a:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #e50914; /* Red text on hover */
+    border-radius: 5px;
+}
+
+/* Section Styling */
+section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+section h2 {
+    color: #e50914;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* Highlight Section Styling */
+.highlight-section {
+    background-color: #1e1e1e;
+    border: 1px solid #e50914;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.highlight-section h2 {
+    color: #e50914;
+}
+
+.highlight-section a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    color: #e50914;
+    font-weight: bold;
+}
+
+.highlight-section a:hover {
+    text-decoration: underline;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+table, th, td {
+    border: 1px solid #e50914;
+    padding: 0.8rem;
+  
