@@ -1,22 +1,49 @@
-// JavaScript for constant rotating carousel
 document.addEventListener("DOMContentLoaded", function() {
     const items = document.querySelectorAll(".carousel-item");
+    const dots = document.querySelectorAll(".dot");
     let currentIndex = 0;
+    let interval;
 
-    function showNextItem() {
-        // Reset all items to their initial position off-screen
-        items.forEach((item, index) => {
-            item.style.transform = 'translateX(100%)';
-        });
+    // Show the initial item and start rotation
+    items[currentIndex].classList.add("active");
+    dots[currentIndex].classList.add("active");
 
-        // Display the current item
-        items[currentIndex].style.transform = 'translateX(0%)';
+    function showItem(index) {
+        // Hide the current item
+        items[currentIndex].classList.remove("active");
+        dots[currentIndex].classList.remove("active");
 
-        // Prepare the next item by moving it into view
-        currentIndex = (currentIndex + 1) % items.length;
-        items[currentIndex].style.transform = 'translateX(-100%)';
+        // Show the new item
+        currentIndex = index;
+        items[currentIndex].classList.add("active");
+        dots[currentIndex].classList.add("active");
     }
 
-    // Rotate items every 3 seconds without interruption
-    setInterval(showNextItem, 3000);
+    function nextItem() {
+        const nextIndex = (currentIndex + 1) % items.length;
+        showItem(nextIndex);
+    }
+
+    function startRotation() {
+        interval = setInterval(nextItem, 3000);
+    }
+
+    function stopRotation() {
+        clearInterval(interval);
+    }
+
+    // Set up automatic rotation
+    startRotation();
+
+    // Pause rotation on hover
+    document.querySelector(".carousel").addEventListener("mouseover", stopRotation);
+    document.querySelector(".carousel").addEventListener("mouseout", startRotation);
+
+    // Dot click event
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            showItem(index);
+            stopRotation();
+        });
+    });
 });
