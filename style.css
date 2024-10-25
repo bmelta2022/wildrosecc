@@ -76,6 +76,43 @@ nav ul li a:hover {
     transform: translateY(-5px); /* Lift up effect */
 }
 
+/* About Us Section Styling */
+#about-us {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#about-us h2 {
+    color: #e50914;
+    margin-bottom: 1rem;
+}
+
+#about-us p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+#about-us ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 2rem;
+}
+
+#about-us ul li {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}
+
+/* Content Container for About Us */
+.content-container {
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
 /* Table Styling for All Pages */
 table {
     width: 100%;
