@@ -66,6 +66,36 @@ nav ul li a:hover {
     transform: translateY(-5px); /* Adds a subtle lift on hover */
 }
 
+/* Table Styling for All Pages */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+table, th, td {
+    border: 1px solid #e50914;
+    padding: 0.8rem;
+    text-align: center;
+}
+
+th {
+    background-color: #e50914;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+/* Table Hover Effects */
+table tbody tr:hover {
+    background-color: #444;
+    transition: background-color 0.3s ease;
+}
+
 /* Main Buttons Section Styling */
 #main-buttons {
     display: flex;
@@ -119,6 +149,14 @@ footer {
 
     nav ul li {
         margin: 0.5rem 0;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 0.5rem;
     }
 
     .main-button {
