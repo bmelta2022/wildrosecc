@@ -37,20 +37,21 @@ header p {
     font-style: italic;
 }
 
-/* Navigation Menu */
+/* Navigation Menu - Vertical Buttons */
 nav ul {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Vertical stacking */
+    align-items: center; /* Centering the buttons */
     list-style: none;
-    padding: 1rem 0;
+    padding: 2rem 0;
     background-color: #333;
 }
 
 nav ul li {
-    margin: 0 1rem;
+    margin: 1rem 0;
 }
 
-/* Animated Button Styling for Navigation Links */
+/* Styling for Buttons */
 nav ul li a {
     display: inline-block;
     padding: 1rem 2rem;
@@ -59,12 +60,12 @@ nav ul li a {
     text-transform: uppercase;
     text-decoration: none;
     color: #ffffff;
-    background-color: #444;
+    background-color: #e50914;
     border: 2px solid transparent;
     border-radius: 10px;
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    width: 80%; /* Make the buttons stretch horizontally */
+    text-align: center;
 }
 
 nav ul li a:hover {
@@ -72,28 +73,6 @@ nav ul li a:hover {
     background-color: #ffffff;
     border-color: #e50914;
     transform: translateY(-5px); /* Lift up effect */
-}
-
-/* Animation effect when hovering over the button */
-nav ul li a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-    z-index: 1;
-}
-
-nav ul li a:hover::before {
-    left: 100%;
-}
-
-nav ul li a span {
-    position: relative;
-    z-index: 2;
 }
 
 /* Table Styling for All Pages */
