@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wild Rose CC - Team Stats</title>
+    <title>Wild Rose CC - Player Stats</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Team Stats</h1>
+        <h1>Player Stats</h1>
         <nav>
             <a href="index.html">Home</a> |
             <a href="roster.html">Team Roster</a> |
@@ -17,8 +17,8 @@
     </header>
 
     <section id="stats">
-        <h2>Top Performers - Batting</h2>
-        <table>
+        <h2>Batting Stats</h2>
+        <table id="batting-stats-table" class="stats-table">
             <thead>
                 <tr>
                     <th>Player</th>
@@ -28,8 +28,6 @@
                     <th>Average</th>
                     <th>Strike Rate</th>
                     <th>High Score</th>
-                    <th>100s</th>
-                    <th>50s</th>
                 </tr>
             </thead>
             <tbody id="batting-stats">
@@ -37,8 +35,8 @@
             </tbody>
         </table>
 
-        <h2>Top Performers - Bowling</h2>
-        <table>
+        <h2>Bowling Stats</h2>
+        <table id="bowling-stats-table" class="stats-table">
             <thead>
                 <tr>
                     <th>Player</th>
@@ -48,23 +46,14 @@
                     <th>Best Bowling</th>
                     <th>Economy</th>
                     <th>Average</th>
-                    <th>Strike Rate</th>
                 </tr>
             </thead>
             <tbody id="bowling-stats">
                 <!-- Bowling stats will be dynamically populated here -->
             </tbody>
         </table>
-
-        <!-- Add a container for the charts -->
-        <h2>Visual Representation of Top Performers</h2>
-        <div style="width:100%;">
-            <canvas id="battingChart" style="width:50%; height:400px;"></canvas>
-            <canvas id="bowlingChart" style="width:50%; height:400px;"></canvas>
-        </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="stats.js"></script>
 </body>
 </html>
