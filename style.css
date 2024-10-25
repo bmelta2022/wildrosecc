@@ -8,51 +8,48 @@ body {
     line-height: 1.6;
 }
 
-/* Welcome Section (Logo + Text) Styling */
-#welcome-section {
+/* Header Styling */
+header {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    background-color: #e50914;
-    padding: 2rem;
-    height: 100vh;
-    box-sizing: border-box;
-}
-
-#welcome-section img {
-    max-width: 100px; /* Adjust the size of the logo */
-    height: auto;
-    margin-right: 2rem;
-}
-
-#welcome-text {
     text-align: center;
+    background-color: #e50914;
     color: #ffffff;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-#welcome-text h1 {
-    font-size: 2.5rem;
+#team-logo {
+    width: 80px;
+    height: auto;
+    margin-right: 1rem;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+
+header p {
     margin: 0;
-}
-
-#welcome-text p {
-    font-size: 1.2rem;
-    margin: 0.5rem 0 0;
     font-style: italic;
+    font-size: 1rem;
 }
 
 /* Navigation Styling */
 nav ul {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     list-style: none;
     padding: 0;
-    margin: 1rem 0;
-    background-color: #333; /* Add background color to make the navigation visible */
+    margin: 0;
 }
 
 nav ul li {
-    margin: 0 1rem;
+    margin: 0.5rem 0;
 }
 
 nav ul li a {
@@ -62,12 +59,20 @@ nav ul li a {
     padding: 0.5rem 1rem;
     background-color: #444;
     border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav ul li a:hover {
     background-color: #ffffff;
     color: #e50914;
     border-radius: 5px;
+}
+
+/* Section Styling */
+section {
+    padding: 1rem;
+    margin: 0 auto;
+    width: 90%;
 }
 
 /* Highlight Section Styling */
@@ -78,15 +83,10 @@ nav ul li a:hover {
     padding: 1rem;
     margin-bottom: 1.5rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    text-align: center;
 }
 
 .highlight-section h2 {
     color: #e50914;
-}
-
-.highlight-section p {
-    color: #ffffff;
 }
 
 .highlight-section a {
@@ -101,6 +101,30 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+table, th, td {
+    border: 1px solid #e50914;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+thead {
+    background-color: #e50914;
+    color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
 /* Footer Styling */
 footer {
     background-color: #333;
@@ -111,24 +135,41 @@ footer {
     margin-top: 2rem;
 }
 
-/* Media Queries for Mobile */
-@media (max-width: 768px) {
-    #welcome-section {
-        flex-direction: column;
-        text-align: center;
+/* Media Queries for Responsiveness */
+@media (min-width: 600px) {
+    /* Adjust layout for larger mobile devices and tablets */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+    
+    nav ul {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    section {
+        width: 80%;
     }
 
-    #welcome-section img {
-        margin-right: 0;
-        margin-bottom: 1.5rem;
-        max-width: 80%;
-    }
-
-    #welcome-text h1 {
+    header h1 {
         font-size: 2rem;
     }
+}
 
-    #welcome-text p {
+@media (min-width: 768px) {
+    /* Adjust layout for small desktops and up */
+    section {
+        width: 75%;
+    }
+    
+    table {
+        font-size: 1rem;
+    }
+
+    nav ul li a {
+        padding: 0.75rem 1.5rem;
         font-size: 1rem;
     }
 }
