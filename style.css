@@ -20,9 +20,8 @@ body {
 }
 
 #welcome-section img {
-    max-width: 100%;
+    max-width: 100px; /* Adjust the size of the logo */
     height: auto;
-    display: block;
     margin-right: 2rem;
 }
 
@@ -84,6 +83,10 @@ nav ul li a:hover {
 
 .highlight-section h2 {
     color: #e50914;
+}
+
+.highlight-section p {
+    color: #ffffff;
 }
 
 .highlight-section a {
