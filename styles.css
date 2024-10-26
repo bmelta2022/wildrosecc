@@ -93,19 +93,27 @@ tr:hover {
     background-color: #333;
 }
 
-/* Gallery styles */
-.gallery-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
 }
 
-.gallery-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
 }
 
 /* Responsive Styles */
@@ -117,6 +125,11 @@ tr:hover {
     nav ul li a {
         width: 100%; /* Full width links for easier touch interaction */
         text-align: center;
+    }
+
+    .slideshow-container img {
+        width: 100%;
+        height: auto;
     }
 
     table, .gallery-container {
@@ -151,5 +164,13 @@ tr:hover {
 
     table {
         font-size: 12px; /* Smaller font for tables on very small screens */
+    }
+
+    th, td {
+        padding: 6px;
+    }
+
+    main, footer {
+        font-size: 14px;
     }
 }
