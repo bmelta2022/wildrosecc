@@ -3,57 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wild Rose CC - Player Stats</title>
+    <title>Team Stats - Wild Rose CC</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Player Stats</h1>
-        <nav>
-            <a href="index.html">Home</a> |
-            <a href="roster.html">Team Roster</a> |
-            <a href="schedule.html">Match Schedule</a>
-        </nav>
-    </header>
 
-    <section id="stats">
-        <h2>Batting Stats</h2>
-        <table id="batting-stats-table" class="stats-table">
-            <thead>
-                <tr>
-                    <th>Player</th>
-                    <th>Matches</th>
-                    <th>Innings</th>
-                    <th>Runs</th>
-                    <th>Average</th>
-                    <th>Strike Rate</th>
-                    <th>High Score</th>
-                </tr>
-            </thead>
-            <tbody id="batting-stats">
-                <!-- Batting stats will be dynamically populated here -->
-            </tbody>
-        </table>
+<header>
+    <img src="logo.png" alt="Wild Rose CC Logo" id="team-logo">
+    <div>
+        <h1>Wild Rose CC Team Stats</h1>
+        <p>Performance Overview of Top 10 Players</p>
+    </div>
+</header>
 
-        <h2>Bowling Stats</h2>
-        <table id="bowling-stats-table" class="stats-table">
-            <thead>
-                <tr>
-                    <th>Player</th>
-                    <th>Matches</th>
-                    <th>Overs</th>
-                    <th>Wickets</th>
-                    <th>Best Bowling</th>
-                    <th>Economy</th>
-                    <th>Average</th>
-                </tr>
-            </thead>
-            <tbody id="bowling-stats">
-                <!-- Bowling stats will be dynamically populated here -->
-            </tbody>
-        </table>
-    </section>
+<!-- Horizontal Navigation Menu -->
+<nav>
+    <ul class="horizontal-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="roster.html">Team Roster</a></li>
+        <li><a href="schedule.html">Match Schedule</a></li>
+        <li><a href="stats.html">Team Stats</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+</nav>
 
-    <script src="stats.js"></script>
+<section id="team-stats">
+    <h2>Top 10 Batting Stats</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Matches</th>
+                <th>Innings</th>
+                <th>Runs</th>
+                <th>Average</th>
+                <th>Strike Rate</th>
+                <th>High Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Aamir Nazir</td><td>12</td><td>12</td><td>424</td><td>38.55</td><td>118.77</td><td>128</td></tr>
+            <tr><td>Farhan Pervez</td><td>12</td><td>11</td><td>275</td><td>27.5</td><td>70.69</td><td>69</td></tr>
+            <tr><td>Abhinav Arora</td><td>10</td><td>10</td><td>251</td><td>27.89</td><td>102.03</td><td>76</td></tr>
+            <tr><td>Nauman Malik</td><td>11</td><td>10</td><td>240</td><td>24.00</td><td>87.59</td><td>49</td></tr>
+            <tr><td>Mahmood Bilal</td><td>7</td><td>6</td><td>114</td><td>19.00</td><td>116.33</td><td>22</td></tr>
+            <tr><td>Rabi Arif</td><td>7</td><td>6</td><td>110</td><td>22.00</td><td>102.80</td><td>33</td></tr>
+            <tr><td>Sulman Sheikh</td><td>11</td><td>10</td><td>69</td><td>11.50</td><td>78.41</td><td>22</td></tr>
+            <tr><td>Kamal Sarna</td><td>8</td><td>7</td><td>63</td><td>10.50</td><td>44.68</td><td>18</td></tr>
+            <tr><td>Shahbaz Khattar</td><td>5</td><td>4</td><td>42</td><td>10.50</td><td>63.64</td><td>27</td></tr>
+            <tr><td>Daksh Khan Floater</td><td>2</td><td>2</td><td>40</td><td>20.00</td><td>90.91</td><td>24</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Top 10 Bowling Stats</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Matches</th>
+                <th>Overs</th>
+                <th>Wickets</th>
+                <th>Best Bowling</th>
+                <th>Economy</th>
+                <th>Average</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Abhinav Arora</td><td>10</td><td>51.0</td><td>20</td><td>37/4</td><td>4.71</td><td>12.00</td></tr>
+            <tr><td>Farhan Pervez</td><td>12</td><td>70.1</td><td>18</td><td>21/3</td><td>5.16</td><td>20.11</td></tr>
+            <tr><td>Aamir Nazir</td><td>12</td><td>61.1</td><td>15</td><td>20/3</td><td>5.46</td><td>22.27</td></tr>
+            <tr><td>Mahmood Bilal</td><td>7</td><td>37.3</td><td>9</td><td>17/3</td><td>5.52</td><td>23.00</td></tr>
+            <tr><td>Nauman Malik</td><td>11</td><td>29.3</td><td>8</td><td>25/3</td><td>5.12</td><td>18.88</td></tr>
+            <tr><td>Shahood Ahmed</td><td>5</td><td>15.0</td><td>7</td><td>6/2</td><td>5.67</td><td>12.14</td></tr>
+            <tr><td>Khurshid Sheikh</td><td>2</td><td>11.0</td><td>4</td><td>18/2</td><td>5.36</td><td>14.75</td></tr>
+            <tr><td>Sultan Sheikh</td><td>7</td><td>6.5</td><td>4</td><td>6/2</td><td>7.02</td><td>12.00</td></tr>
+            <tr><td>Shahbaz Khattar</td><td>5</td><td>7.0</td><td>3</td><td>41/3</td><td>5.86</td><td>13.67</td></tr>
+            <tr><td>Raja Shakeel</td><td>4</td><td>8.0</td><td>2</td><td>8/1</td><td>6.25</td><td>25.00</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<footer>
+    <h2>Contact Us</h2>
+    <p>Email: contact@wildrosecc.com</p>
+    <p>Phone: +1 (403) 123-4567</p>
+</footer>
+
 </body>
 </html>
