@@ -1,7 +1,7 @@
 /* General body styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: black;
+    background-color: black;  /* Ensures the overall background remains consistent */
     color: white;
     margin: 0;
     padding: 0;
@@ -69,71 +69,23 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background-color: white; /* Set uniform background color */
+    background-color: black; /* Changed from white to black */
 }
 
 th, td {
     padding: 10px;
     text-align: left;
     border: 1px solid grey;
+    color: white; /* Text color changed to white */
+    background-color: black; /* Ensure cells have black background */
 }
 
 thead {
-    background-color: #f2f2f2;
+    background-color: #333; /* Darker shade for header */
 }
 
 tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* Slideshow container */
-.slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Box shadow for framing */
-}
-
-/* Hide the images by default */
-.mySlides {
-    display: none;
-    width: 100%; /* Ensure slides are responsive */
-}
-
-/* Fading animation */
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-}
-
-/* Navigation dots */
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.dot.active {
-    background-color: #717171;
-}
-
-/* Progress bar for slideshow timer */
-.progress {
-    height: 5px;
-    width: 0%;
-    background-color: red;
-    position: absolute;
-    bottom: 0;
+    background-color: #555; /* Hover effect with a slightly lighter black */
 }
 
 @media (max-width: 768px) {
