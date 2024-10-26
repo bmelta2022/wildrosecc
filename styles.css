@@ -5,6 +5,7 @@ body {
     color: white;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 /* Header styles */
@@ -16,14 +17,17 @@ header {
 }
 
 header img {
-    height: 50px;
-    vertical-align: middle;
+    max-height: 50px; /* Ensures image is responsive */
+    width: auto;
+    display: block;
+    margin: 0 auto; /* Centers the logo */
 }
 
 /* Navigation styles */
 nav {
     background-color: black;
     text-align: center;
+    padding: 10px 0;
 }
 
 nav ul {
@@ -94,9 +98,11 @@ tr:hover {
 
 /* Slideshow container */
 .slideshow-container {
-    max-width: 100%;
+    max-width: 1000px;
     position: relative;
     margin: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Box shadow for framing */
+    border: 5px solid white; /* Border for aesthetic framing */
 }
 
 /* Hide the images by default */
@@ -116,7 +122,32 @@ tr:hover {
     to {opacity: 1}
 }
 
-/* Responsive adjustments for devices */
+/* Navigation dots */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+
+/* Progress bar */
+.progress {
+    height: 5px;
+    width: 0%;
+    background-color: red;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -132,36 +163,25 @@ tr:hover {
         height: auto;
     }
 
-    table, th, td {
-        font-size: 12px; /* Smaller font size for tables */
+    header, nav, main, footer {
+        padding: 10px;
+    }
+
+    header h1, nav ul li a, footer {
+        font-size: smaller; /* Smaller font size for very small screens */
     }
 }
 
 @media (max-width: 480px) {
-    header, nav ul li a {
-        padding: 8px; /* Reduced padding */
+    table, th, td {
+        font-size: 12px; /* Smaller font size for tables on very small screens */
     }
 
-    nav ul li a {
-        font-size: 14px; /* Smaller font size for links */
+    th, td {
+        padding: 6px;
     }
 
     main, footer {
-        padding: 10px;
         font-size: 14px;
     }
-}
-
-/* Social Media Link Style */
-.social-link {
-    display: inline-block;
-    background-color: #3b5998; /* Facebook blue */
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.social-link:hover {
-    background-color: #2a4373; /* Darker shade of Facebook blue */
 }
