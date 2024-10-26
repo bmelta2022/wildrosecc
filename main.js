@@ -1,49 +1,30 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const items = document.querySelectorAll(".carousel-item");
-    const dots = document.querySelectorAll(".dot");
-    let currentIndex = 0;
-    let interval;
+    const scheduleData = [
+        { date: "5/5/2024", time: "3:00 PM", team: "Wildrose Cricket Club", opponent: "Alpine Cricket Club", location: "RLCG" },
+        { date: "5/19/2024", time: "9:00 AM", team: "Wildrose Cricket Club", opponent: "Calgary Eagles", location: "ESH" },
+        { date: "7/1/2024", time: "3:00 PM", team: "Gujarat Lions", opponent: "Wildrose Cricket Club", location: "WCG" },
+        { date: "7/6/2024", time: "9:00 AM", team: "Wildrose Cricket Club", opponent: "Alpine Cricket Club", location: "WCG" },
+        { date: "7/13/2024", time: "3:00 PM", team: "Alpine Cricket Club", opponent: "Wildrose Cricket Club", location: "ESH" },
+        { date: "7/21/2024", time: "3:00 PM", team: "Calgary Eagles", opponent: "Wildrose Cricket Club", location: "RLCG" },
+        { date: "7/27/2024", time: "3:00 PM", team: "Wildrose Cricket Club", opponent: "Markhor", location: "WCG" },
+        { date: "8/5/2024", time: "3:00 PM", team: "Markhor", opponent: "Wildrose Cricket Club", location: "WCG" },
+        { date: "8/10/2024", time: "9:00 AM", team: "Wildrose Cricket Club", opponent: "Gujarat Lions", location: "ESH" },
+        { date: "9/1/2024", time: "3:00 PM", team: "Markhor", opponent: "Wildrose Cricket Club", location: "WCG" },
+        { date: "9/29/2024", time: "10:00 AM", team: "Calgary Eagles", opponent: "Wildrose Cricket Club", location: "ESH" },
+        { date: "10/5/2024", time: "10:00 AM", team: "Gujarat Lions", opponent: "Wildrose Cricket Club", location: "ESH" }
+    ];
 
-    // Show the initial item and start rotation
-    items[currentIndex].classList.add("active");
-    dots[currentIndex].classList.add("active");
+    const scheduleTable = document.getElementById("schedule-table");
 
-    function showItem(index) {
-        // Hide the current item
-        items[currentIndex].classList.remove("active");
-        dots[currentIndex].classList.remove("active");
-
-        // Show the new item
-        currentIndex = index;
-        items[currentIndex].classList.add("active");
-        dots[currentIndex].classList.add("active");
-    }
-
-    function nextItem() {
-        const nextIndex = (currentIndex + 1) % items.length;
-        showItem(nextIndex);
-    }
-
-    function startRotation() {
-        interval = setInterval(nextItem, 3000);
-    }
-
-    function stopRotation() {
-        clearInterval(interval);
-    }
-
-    // Set up automatic rotation
-    startRotation();
-
-    // Pause rotation on hover
-    document.querySelector(".carousel").addEventListener("mouseover", stopRotation);
-    document.querySelector(".carousel").addEventListener("mouseout", startRotation);
-
-    // Dot click event
-    dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-            showItem(index);
-            stopRotation();
-        });
+    scheduleData.forEach(match => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${match.date}</td>
+            <td>${match.time}</td>
+            <td>${match.team}</td>
+            <td>${match.opponent}</td>
+            <td>${match.location}</td>
+        `;
+        scheduleTable.appendChild(row);
     });
 });
