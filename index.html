@@ -16,24 +16,61 @@
     </div>
 </header>
 
-<!-- Vertical Navigation Menu -->
+<!-- Horizontal Navigation Menu -->
 <nav>
-    <ul class="vertical-menu">
-        <li><a href="index.html">Home</a></li>
+    <ul class="horizontal-menu">
         <li><a href="roster.html">Team Roster</a></li>
         <li><a href="schedule.html">Match Schedule</a></li>
         <li><a href="stats.html">Team Stats</a></li>
-        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
     </ul>
 </nav>
 
-<!-- Other Sections Here -->
+<section id="highlights">
+    <!-- Roster Highlights -->
+    <div class="highlight-section">
+        <h2>Team Roster Highlights</h2>
+        <ul id="roster-highlight"></ul>
+        <a href="roster.html">View Full Roster</a>
+    </div>
+
+    <!-- Schedule Highlights -->
+    <div class="highlight-section">
+        <h2>Upcoming Matches</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Opponent</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody id="schedule-highlight"></tbody>
+        </table>
+        <a href="schedule.html">View Full Schedule</a>
+    </div>
+
+    <!-- Stats Highlights -->
+    <div class="highlight-section">
+        <h2>Team Stats Overview</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>T20</th>
+                    <th>35 Over</th>
+                </tr>
+            </thead>
+            <tbody id="stats-highlight"></tbody>
+        </table>
+        <a href="stats.html">View Detailed Stats</a>
+    </div>
+</section>
 
 <footer id="contact">
     <h2>Contact Us</h2>
     <p>Email: contact@wildrosecc.com</p>
     <p>Phone: +1 (403) 123-4567</p>
-    <p>Address: 123 Cricket Avenue, Calgary, AB</p>
 </footer>
 
 </body>
