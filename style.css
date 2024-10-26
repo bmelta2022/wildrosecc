@@ -38,43 +38,7 @@ header p {
     font-size: 1.2rem;
 }
 
-/* Centralized Vertical Button Menu for Home Page */
-.central-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.central-menu li {
-    margin: 10px 0;
-}
-
-.central-menu li a {
-    background-color: #e50914;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    transition: background-color 0.3s, transform 0.2s;
-    font-size: 1.2rem;
-    text-align: center;
-    width: 200px;
-    display: inline-block;
-}
-
-.central-menu li a:hover {
-    background-color: #ffffff;
-    color: #e50914;
-    transform: translateY(-3px);
-}
-
-/* Horizontal Menu Styling for Other Pages */
+/* Horizontal Menu Styling */
 .horizontal-menu {
     display: flex;
     justify-content: center;
@@ -107,7 +71,7 @@ header p {
     color: white;
 }
 
-/* Table Styling for All Pages */
+/* Table Styling */
 .table-wrapper {
     overflow-x: auto; /* Enables horizontal scroll for mobile */
     width: 100%;
@@ -148,11 +112,8 @@ footer {
     width: 100%;
 }
 
-footer h2 {
-    margin: 10px 0;
-}
-
 footer p {
+    font-size: 0.9rem;
     margin: 5px 0;
 }
 
@@ -175,11 +136,6 @@ footer p {
 
     header p {
         font-size: 1rem;
-    }
-
-    /* Centralized Button Menu for Home Page */
-    .central-menu li a {
-        width: 80%; /* Expands buttons for better tap targets on mobile */
     }
 
     /* Horizontal Menu */
