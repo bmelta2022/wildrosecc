@@ -211,3 +211,8 @@ footer p {
         font-size: 0.9rem;
     }
 }
+
+/* Ensure min-width for columns in match schedule table */
+th {
+    min-width: 100px; /* Default minimum width for table headers */
+}
