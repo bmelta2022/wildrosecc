@@ -67,7 +67,35 @@ header p {
     color: #e50914;
 }
 
-/* Vertical Menu Styling */
+/* Centered Button Styling for Index Page */
+.center-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh; /* Vertically centers the buttons within this section */
+    gap: 15px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #e50914; /* Red background */
+    color: #ffffff; /* White text */
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    width: 200px; /* Fixed width for centered alignment */
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #e50914; /* Red text on hover */
+}
+
+/* Vertical Menu Styling (for specific pages if needed) */
 .vertical-menu ul {
     list-style: none;
     padding: 0;
@@ -93,34 +121,6 @@ header p {
 .vertical-menu ul li a:hover {
     background-color: #ffffff;
     color: #e50914;
-}
-
-/* Centered Button Styling for Index Page */
-.center-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 60vh; /* Centers the buttons vertically on the page */
-    text-align: center;
-}
-
-.button {
-    display: inline-block;
-    background-color: #e50914; /* Red background */
-    color: #ffffff; /* White text */
-    text-decoration: none;
-    padding: 15px 30px;
-    margin: 10px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-.button:hover {
-    background-color: #ffffff; /* White background on hover */
-    color: #e50914; /* Red text on hover */
 }
 
 /* Section Styling */
@@ -193,7 +193,7 @@ footer {
     }
 
     .button {
-        width: 80%; /* Expand button width on mobile for better usability */
+        width: 80%; /* Expands button width on mobile for better usability */
         font-size: 1rem;
     }
 
