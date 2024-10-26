@@ -9,12 +9,17 @@
         let slideIndex = 0;
         function showSlides() {
             let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            let progressBar = document.getElementById("progressBar");
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";  
+                dots[i].className = dots[i].className.replace(" active", "");
             }
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}    
             slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            progressBar.style.width = ((slideIndex / slides.length) * 100) + "%";
             setTimeout(showSlides, 3000); // Change image every 3 seconds
         }
     </script>
@@ -38,20 +43,22 @@
     <main>
         <h2>Gallery</h2>
         <div class="slideshow-container">
-            <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
                 <img src="gallery1.jpg" style="width:100%">
             </div>
-
             <div class="mySlides fade">
                 <img src="gallery2.jpg" style="width:100%">
             </div>
-
             <div class="mySlides fade">
                 <img src="gallery3.jpg" style="width:100%">
             </div>
-
-            <!-- Add more slides as needed -->
+            <div class="progress" id="progressBar"></div>
+        </div>
+        <br>
+        <div style="text-align:center">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
         </div>
     </main>
     <footer>
