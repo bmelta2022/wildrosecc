@@ -5,36 +5,33 @@ body {
     background-color: #121212;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
 /* Header Styling */
 header {
-    display: flex;
-    align-items: center;
     background-color: #e50914;
     color: #ffffff;
-    padding: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 100%;
     text-align: center;
-    flex-direction: column;
 }
 
 #team-logo {
-    width: 80px;
-    height: auto;
+    height: 80px;
     margin-bottom: 10px;
 }
 
 header h1 {
-    font-size: 2rem;
-    margin: 0;
-    font-weight: bold;
+    margin: 10px 0 5px;
 }
 
 header p {
     margin: 0;
-    font-style: italic;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 /* Horizontal Navigation Menu */
@@ -70,7 +67,7 @@ header p {
     color: #e50914;
 }
 
-/* Vertical Menu Styling (for mobile or other pages if needed) */
+/* Vertical Menu Styling */
 .vertical-menu ul {
     list-style: none;
     padding: 0;
@@ -96,6 +93,34 @@ header p {
 .vertical-menu ul li a:hover {
     background-color: #ffffff;
     color: #e50914;
+}
+
+/* Centered Button Styling for Index Page */
+.center-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh; /* Centers the buttons vertically on the page */
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    background-color: #e50914; /* Red background */
+    color: #ffffff; /* White text */
+    text-decoration: none;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #e50914; /* Red text on hover */
 }
 
 /* Section Styling */
@@ -152,6 +177,7 @@ footer {
         font-size: 0.9rem;
     }
 
+    /* Adjust horizontal menu for small screens */
     .horizontal-menu ul {
         flex-direction: column;
         align-items: center;
@@ -159,6 +185,16 @@ footer {
 
     .horizontal-menu ul li {
         margin: 5px 0;
+    }
+
+    /* Adjust buttons in center section for small screens */
+    .center-buttons {
+        padding: 10px;
+    }
+
+    .button {
+        width: 80%; /* Expand button width on mobile for better usability */
+        font-size: 1rem;
     }
 
     /* Adjust table for smaller screens */
