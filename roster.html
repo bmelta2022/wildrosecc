@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wild Rose CC - Team Roster</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Function to sort the table by column index
+        function sortTable(columnIndex) {
+            const table = document.getElementById("rosterTable");
+            let rows, switching, i, x, y, shouldSwitch;
+            switching = true;
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 1; i < rows.length - 1; i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("TD")[columnIndex];
+                    y = rows[i + 1].getElementsByTagName("TD")[columnIndex];
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                }
+            }
+        }
+
+        // Function to filter players by role
+        function filterTable() {
+            const filter = document.getElementById("roleFilter").value.toLowerCase();
+            const table = document.getElementById("rosterTable");
+            const rows = table.getElementsByTagName("tr");
+            for (let i = 1; i < rows.length; i++) {
+                const roleCell = rows[i].getElementsByTagName("td")[1]; // Adjusted column index for role
+                if (roleCell) {
+                    const roleText = roleCell.textContent || roleCell.innerText;
+                    if (filter === "" || roleText.toLowerCase().includes(filter)) {
+                        rows[i].style.display = ""; // Show row
+                    } else {
+                        rows[i].style.display = "none"; // Hide row
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Wild Rose CC Logo" style="height: 50px;">
+        <h1>Wild Rose CC</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="roster.html">Team Roster</a></li>
+            <li><a href="schedule.html">Match Schedule</a></li>
+            <li><a href="stats.html">Statistics</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Team Roster</h2>
+
+        <!-- Filter dropdown -->
+        <label for="roleFilter">Filter by Role:</label>
+        <select id="roleFilter" onchange="filterTable()">
+            <option value="">All</option>
+            <option value="Captain">Captain</option>
+            <option value="Vice Captain">Vice Captain</option>
+            <option value="Wicket Keeper">Wicket Keeper</option>
+            <option value="Batsman">Batsman</option>
+            <option value="Bowler">Bowler</option>
+            <option value="All-rounder">All-rounder</option>
+            <option value="Player">Player</option>
+        </select>
+
+        <!-- Table with sortable columns -->
+        <table id="rosterTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Player Name</th>
+                    <th onclick="sortTable(1)">Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Farhan Pervez</td><td>Captain</td></tr>
+                <tr><td>Sulman Sheikh</td><td>Vice-Captain, Wicket Keeper</td></tr>
+                <tr><td>Shahbaz Khattar</td><td>Player</td></tr>
+                <tr><td>Shahood Ahmed</td><td>Player</td></tr>
+                <tr><td>Rabi Arif</td><td>Player</td></tr>
+                <tr><td>Iqbal Usman</td><td>Player</td></tr>
+                <tr><td>Mahmood Bilal</td><td>Player</td></tr>
+                <tr><td>Raja Shakeel</td><td>Player</td></tr>
+                <tr><td>Nauman Malik</td><td>Player</td></tr>
+                <tr><td>Kamal Sarna</td><td>Player</td></tr>
+                <tr><td>Shahbaz Haider</td><td>Player</td></tr>
+                <tr><td>Aamir Nazir</td><td>Player</td></tr>
+                <tr><td>Khurram Jarral</td><td>Player</td></tr>
+                <tr><td>Abhinav Arora</td><td>Player</td></tr>
+                <tr><td>Sultan Sheikh</td><td>Player</td></tr>
+                <tr><td>Khurshid Sheikh</td><td>Player</td></tr>
+                <tr><td>Karan Baath</td><td>Player</td></tr>
+                <tr><td>Usman Khawaja</td><td>Player</td></tr>
+                <tr><td>Jawad Hussain</td><td>Player</td></tr>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>Contact us at <a href="mailto:info@wildrosecc.com">info@wildrosecc.com</a>.</p>
+    </footer>
+</body>
+</html>

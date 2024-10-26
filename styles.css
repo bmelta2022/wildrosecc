@@ -1,0 +1,162 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background-color: red;
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+/* Navigation styles */
+nav {
+    background-color: black;
+    text-align: center;
+}
+
+nav ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 5px;
+}
+
+nav ul li a {
+    color: white;
+    background-color: red;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: darkred;
+    color: black;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Footer styles */
+footer {
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid white;
+    font-size: 14px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+thead {
+    background-color: red;
+    color: white;
+}
+
+tr:hover {
+    background-color: #333;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Header and Logo */
+    header img {
+        height: 40px;
+    }
+
+    /* Navigation */
+    nav ul li {
+        width: 100%; /* Stack navigation links vertically on small screens */
+        margin: 0;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px;
+        font-size: 16px;
+        text-align: center;
+        border-radius: 0;
+    }
+
+    /* Main Content */
+    main {
+        padding: 10px;
+        text-align: left;
+    }
+
+    /* Table */
+    table {
+        font-size: 12px; /* Reduce font size on tables for smaller screens */
+        overflow-x: auto;
+        display: block; /* Enable horizontal scrolling for tables */
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Header Font Size */
+    header h1 {
+        font-size: 24px;
+    }
+
+    /* Navigation Font Size */
+    nav ul li a {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    /* Table Font Size */
+    table {
+        font-size: 10px;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+
+    /* General Text Adjustments */
+    main, footer {
+        font-size: 14px;
+    }
+}
