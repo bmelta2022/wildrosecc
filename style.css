@@ -108,7 +108,7 @@ header p {
 
 /* Table Styling for All Pages */
 .table-wrapper {
-    overflow-x: auto;
+    overflow-x: auto; /* Enables horizontal scroll for mobile */
     width: 100%;
     margin-bottom: 20px;
 }
@@ -118,7 +118,7 @@ table {
     border-collapse: collapse;
     background-color: #1e1e1e;
     color: #ffffff;
-    min-width: 600px; /* Ensures table does not shrink too small on small screens */
+    min-width: 700px; /* Ensures table does not shrink too small on small screens */
 }
 
 table, th, td {
@@ -131,6 +131,7 @@ table, th, td {
 th {
     background-color: #e50914;
     font-weight: bold;
+    min-width: 100px; /* Minimum width for table headers to avoid compression */
 }
 
 tbody tr:nth-child(even) {
@@ -177,4 +178,41 @@ footer p {
 
     /* Centralized Button Menu for Home Page */
     .central-menu li a {
-        width: 80%; /* Expands buttons for better tap
+        width: 80%; /* Expands buttons for better tap targets on mobile */
+    }
+
+    /* Horizontal Menu */
+    .horizontal-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .horizontal-menu li {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .horizontal-menu li a {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    /* Table Adjustments */
+    .table-wrapper {
+        padding: 0 10px; /* Adds padding to the table wrapper for mobile */
+    }
+
+    table, th, td {
+        font-size: 0.8rem;
+        white-space: nowrap; /* Prevents text wrapping to keep table compact */
+    }
+
+    th {
+        min-width: 120px; /* Enforce minimum width on headers for readability */
+    }
+
+    /* Footer Styling */
+    footer p {
+        font-size: 0.9rem;
+    }
+}
