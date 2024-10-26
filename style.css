@@ -109,12 +109,12 @@ header p {
 /* Table Styling for All Pages */
 .table-wrapper {
     overflow-x: auto;
-    width: 50%;
+    width: 150%;
     margin-bottom: 20px;
 }
 
 table {
-    width: 50%;
+    width: 150%;
     border-collapse: collapse;
     background-color: #1e1e1e;
     color: #ffffff;
