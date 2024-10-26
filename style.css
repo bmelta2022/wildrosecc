@@ -83,6 +83,7 @@ header p {
     padding: 10px 0;
     margin: 0;
     width: 100%;
+    overflow-x: auto; /* Allows scrolling for the menu on smaller screens */
 }
 
 .horizontal-menu li {
@@ -183,18 +184,19 @@ footer p {
 
     /* Horizontal Menu */
     .horizontal-menu {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        overflow-x: auto; /* Allows horizontal scrolling for long menus */
     }
 
     .horizontal-menu li {
-        width: 100%;
-        margin: 5px 0;
+        width: auto;
+        margin: 0 5px;
     }
 
     .horizontal-menu li a {
         font-size: 1rem;
         padding: 10px;
+        white-space: nowrap; /* Keeps button text in a single line */
     }
 
     /* Table Adjustments */
