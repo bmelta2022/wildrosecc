@@ -5,26 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wild Rose CC - Gallery</title>
     <link rel="stylesheet" href="styles.css">
-    <script>
-        let slideIndex = 0;
-        function showSlides() {
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            let progressBar = document.getElementById("progressBar");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            slides[slideIndex-1].style.display = "block";  
-            dots[slideIndex-1].className += " active";
-            progressBar.style.width = ((slideIndex / slides.length) * 100) + "%";
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
-        }
-    </script>
 </head>
-<body onload="showSlides()">
+<body>
     <header>
         <img src="logo.png" alt="Wild Rose CC Logo" style="height: 50px;">
         <h1>Wild Rose CC</h1>
@@ -41,7 +23,6 @@
         </ul>
     </nav>
     <main>
-        <h2>Gallery</h2>
         <div class="slideshow-container">
             <div class="mySlides fade">
                 <img src="gallery1.jpg" style="width:100%">
@@ -52,17 +33,43 @@
             <div class="mySlides fade">
                 <img src="gallery3.jpg" style="width:100%">
             </div>
-            <div class="progress" id="progressBar"></div>
-        </div>
-        <br>
-        <div style="text-align:center">
-            <span class="dot"></span> 
-            <span class="dot"></span> 
-            <span class="dot"></span> 
+            <div class="progress-bar"></div>
         </div>
     </main>
     <footer>
         <p>Contact us at <a href="mailto:info@wildrosecc.com">info@wildrosecc.com</a>.</p>
     </footer>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            let progressBar = document.querySelector(".progress-bar");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            progressBar.style.width = '0%'; // Reset progress bar
+            animateProgressBar(); // Start filling the progress bar
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        function animateProgressBar() {
+            let progressBar = document.querySelector(".progress-bar");
+            let width = 0;
+            let interval = setInterval(frame, 30); // Adjust interval for smooth animation
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(interval);
+                } else {
+                    width++;
+                    progressBar.style.width = width + '%';
+                }
+            }
+        }
+    </script>
 </body>
 </html>
