@@ -11,10 +11,6 @@ body {
     min-height: 100vh;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 /* Header Styling */
 header {
     background-color: #e50914;
@@ -38,7 +34,7 @@ header p {
     font-size: 1.2rem;
 }
 
-/* Horizontal Menu Styling */
+/* Horizontal Menu Styling for Navigation */
 .horizontal-menu {
     display: flex;
     justify-content: center;
@@ -47,7 +43,6 @@ header p {
     padding: 10px 0;
     margin: 0;
     width: 100%;
-    overflow-x: auto; /* Allows scrolling for the menu on smaller screens */
 }
 
 .horizontal-menu li {
@@ -75,7 +70,9 @@ header p {
 .table-wrapper {
     overflow-x: auto; /* Enables horizontal scroll for mobile */
     width: 100%;
+    padding: 0 15px;
     margin-bottom: 20px;
+    box-sizing: border-box;
 }
 
 table {
@@ -83,7 +80,7 @@ table {
     border-collapse: collapse;
     background-color: #1e1e1e;
     color: #ffffff;
-    min-width: 700px; /* Ensures table does not shrink too small on small screens */
+    min-width: 700px; /* Prevents table from compressing on smaller screens */
 }
 
 table, th, td {
@@ -122,7 +119,6 @@ footer p {
     /* Header and Logo */
     header {
         padding: 10px;
-        flex-direction: column;
     }
 
     #team-logo {
@@ -145,32 +141,33 @@ footer p {
     }
 
     .horizontal-menu li {
-        width: auto;
         margin: 0 5px;
     }
 
     .horizontal-menu li a {
         font-size: 1rem;
         padding: 10px;
-        white-space: nowrap; /* Keeps button text in a single line */
+        white-space: nowrap;
     }
 
-    /* Table Adjustments */
+    /* Table Adjustments for Mobile */
     .table-wrapper {
-        padding: 0 10px; /* Adds padding to the table wrapper for mobile */
+        padding: 0 5px; /* Reduces padding on mobile for a better fit */
     }
 
     table, th, td {
         font-size: 0.8rem;
-        white-space: nowrap; /* Prevents text wrapping to keep table compact */
+        white-space: nowrap; /* Keeps content in one line to prevent wrapping */
     }
 
-    th {
-        min-width: 120px; /* Enforce minimum width on headers for readability */
+    th, td {
+        padding: 10px; /* Increases padding slightly for readability */
     }
-
-    /* Footer Styling */
-    footer p {
-        font-size: 0.9rem;
+    
+    /* Ensuring all columns are scrollable on small screens */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
     }
 }
