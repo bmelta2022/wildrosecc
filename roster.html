@@ -3,49 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wild Rose CC - Team Roster</title>
+    <title>Team Roster - Wild Rose CC</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Team Roster</h1>
-        <nav>
-            <a href="index.html">Home</a> |
-            <a href="schedule.html">Match Schedule</a> |
-            <a href="stats.html">Team Stats</a>
-        </nav>
-    </header>
 
-    <section id="roster">
-        <h2>T20 Roster</h2>
-        <table id="t20-roster" class="roster-table">
-            <thead>
-                <tr>
-                    <th>Player Number</th>
-                    <th>Player Name</th>
-                    <th>Role</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- T20 Players will be dynamically loaded here -->
-            </tbody>
-        </table>
+<header>
+    <img src="logo.png" alt="Wild Rose CC Logo" id="team-logo">
+    <div>
+        <h1>Wild Rose CC Team Roster</h1>
+        <p>Meet Our Team</p>
+    </div>
+</header>
 
-        <h2>35 Over Roster</h2>
-        <table id="overs35-roster" class="roster-table">
-            <thead>
-                <tr>
-                    <th>Player Number</th>
-                    <th>Player Name</th>
-                    <th>Role</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- 35 Over Players will be dynamically loaded here -->
-            </tbody>
-        </table>
-    </section>
+<!-- Horizontal Navigation Menu -->
+<nav>
+    <ul class="horizontal-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="roster.html">Team Roster</a></li>
+        <li><a href="schedule.html">Match Schedule</a></li>
+        <li><a href="stats.html">Team Stats</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+</nav>
 
-    <script src="roster.js"></script>
+<section id="team-roster">
+    <h2>Team Roster</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Player Number</th>
+                <th>Player Name</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Add player rows here -->
+            <tr><td>1</td><td>Farhan Pervez (Captain)</td><td>Batsman</td></tr>
+            <tr><td>2</td><td>Sulman Sheikh (Vice Captain & Keeper)</td><td>Wicketkeeper</td></tr>
+            <tr><td>3</td><td>Player 3</td><td>Bowler</td></tr>
+            <!-- Add more players as needed -->
+        </tbody>
+    </table>
+</section>
+
+<footer>
+    <h2>Contact Us</h2>
+    <p>Email: contact@wildrosecc.com</p>
+    <p>Phone: +1 (403) 123-4567</p>
+</footer>
+
 </body>
 </html>
