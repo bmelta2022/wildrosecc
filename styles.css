@@ -5,7 +5,6 @@ body {
     color: white;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 /* Header styles */
@@ -17,17 +16,13 @@ header {
 }
 
 header img {
-    max-height: 50px; /* Ensures image is responsive */
-    width: auto;
-    display: block;
-    margin: 0 auto; /* Centers the logo */
+    height: 50px;
 }
 
 /* Navigation styles */
 nav {
     background-color: black;
     text-align: center;
-    padding: 10px 0;
 }
 
 nav ul {
@@ -35,12 +30,11 @@ nav ul {
     list-style-type: none;
     margin: 0;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
 nav ul li {
-    margin: 5px;
+    display: inline;
 }
 
 nav ul li a {
@@ -54,7 +48,6 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: darkred;
-    color: black;
 }
 
 /* Main content styles */
@@ -69,7 +62,6 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    width: 100%;
 }
 
 /* Table styles */
@@ -77,111 +69,48 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    border: 1px solid #ddd;
 }
 
 th, td {
     padding: 10px;
-    text-align: center;
-    background-color: black;
-    color: white;
-    border: 1px solid white;
+    text-align: left;
+    border: 1px solid #ddd;
 }
 
 thead {
-    background-color: red;
-    color: white;
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
 tr:hover {
-    background-color: #333;
+    background-color: #f1f1f1;
 }
 
-/* Slideshow container */
-.slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Box shadow for framing */
-    border: 5px solid white; /* Border for aesthetic framing */
-}
-
-/* Hide the images by default */
-.mySlides {
-    display: none;
-    width: 100%; /* Ensure slides are responsive */
-}
-
-/* Fading animation */
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-}
-
-/* Navigation dots */
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.dot.active {
-    background-color: #717171;
-}
-
-/* Progress bar */
-.progress {
-    height: 5px;
-    width: 0%;
-    background-color: red;
-    position: absolute;
-    bottom: 0;
-}
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
     }
 
     nav ul li a {
-        width: 100%; /* Full width links for easier touch interaction */
-        text-align: center;
-    }
-
-    .slideshow-container img {
+        display: block;
         width: 100%;
-        height: auto;
     }
 
-    header, nav, main, footer {
+    header, footer, main {
         padding: 10px;
     }
 
-    header h1, nav ul li a, footer {
-        font-size: smaller; /* Smaller font size for very small screens */
+    table, th, td {
+        font-size: 14px;  /* Smaller font size for tables on very small screens */
     }
 }
 
 @media (max-width: 480px) {
-    table, th, td {
-        font-size: 12px; /* Smaller font size for tables on very small screens */
-    }
-
-    th, td {
-        padding: 6px;
-    }
-
-    main, footer {
-        font-size: 14px;
+    header h1, nav ul li a, footer p {
+        font-size: 16px; /* Adjust font size for very small screens */
     }
 }
