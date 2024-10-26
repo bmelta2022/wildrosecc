@@ -5,112 +5,110 @@ body {
     background-color: #121212;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 /* Header Styling */
 header {
+    display: flex;
+    align-items: center;
     background-color: #e50914;
     color: #ffffff;
-    padding: 20px;
-    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     text-align: center;
+    flex-direction: column;
 }
 
 #team-logo {
-    height: 80px;
+    width: 80px;
+    height: auto;
     margin-bottom: 10px;
 }
 
 header h1 {
-    margin: 10px 0 5px;
+    font-size: 2rem;
+    margin: 0;
+    font-weight: bold;
 }
 
 header p {
     margin: 0;
-    font-size: 1.2rem;
+    font-style: italic;
+    font-size: 1rem;
 }
 
-/* Centralized Vertical Button Menu for Home Page */
-.central-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.central-menu li {
-    margin: 10px 0;
-}
-
-.central-menu li a {
-    background-color: #e50914;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    transition: background-color 0.3s, transform 0.2s;
-    font-size: 1.2rem;
+/* Horizontal Navigation Menu */
+.horizontal-menu {
+    background-color: #333;
     text-align: center;
-    width: 200px;
-    display: inline-block;
+    padding: 10px 0;
 }
 
-.central-menu li a:hover {
+.horizontal-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.horizontal-menu ul li {
+    margin: 0 10px;
+}
+
+.horizontal-menu ul li a {
+    color: #ffffff;
+    background-color: #e50914;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.horizontal-menu ul li a:hover {
     background-color: #ffffff;
     color: #e50914;
-    transform: translateY(-3px);
 }
 
-/* Horizontal Menu Styling for Other Pages */
-.horizontal-menu {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    background-color: #333;
-    padding: 10px 0;
+/* Vertical Menu Styling (for mobile or other pages if needed) */
+.vertical-menu ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
-    width: 100%;
-}
-
-.horizontal-menu li {
-    margin: 5px;
-}
-
-.horizontal-menu li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px 20px;
-    background-color: #1e1e1e;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
     display: block;
+    background-color: #333;
+}
+
+.vertical-menu ul li {
+    margin: 10px 0;
     text-align: center;
 }
 
-.horizontal-menu li a:hover {
+.vertical-menu ul li a {
+    color: #ffffff;
     background-color: #e50914;
-    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
 }
 
-/* Table Styling for All Pages */
+.vertical-menu ul li a:hover {
+    background-color: #ffffff;
+    color: #e50914;
+}
+
+/* Section Styling */
+section.content {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+/* Table Styling */
 .table-wrapper {
-    overflow-x: auto;
-    width: 100%;
-    margin-bottom: 20px;
+    overflow-x: auto; /* Make table scrollable on smaller screens */
+    margin: 1rem 0;
 }
 
 table {
@@ -118,19 +116,17 @@ table {
     border-collapse: collapse;
     background-color: #1e1e1e;
     color: #ffffff;
-    min-width: 600px; /* Ensures table does not shrink too small on small screens */
 }
 
 table, th, td {
     border: 1px solid #e50914;
     padding: 0.8rem;
     text-align: center;
-    font-size: 0.9rem;
 }
 
-th {
+thead {
     background-color: #e50914;
-    font-weight: bold;
+    color: #ffffff;
 }
 
 tbody tr:nth-child(even) {
@@ -142,77 +138,35 @@ footer {
     background-color: #333;
     color: #ffffff;
     text-align: center;
-    padding: 20px;
-    width: 100%;
+    padding: 1rem;
+    font-size: 0.9rem;
 }
 
-footer h2 {
-    margin: 10px 0;
-}
-
-footer p {
-    margin: 5px 0;
-}
-
-/* Media Queries for Responsive Adjustments */
+/* Responsive Design for Mobile */
 @media (max-width: 768px) {
-    /* Header and Logo */
-    header {
-        padding: 10px;
-        flex-direction: column;
-    }
-
-    #team-logo {
-        width: 60px;
-        margin: 0 auto 10px;
-    }
-
     header h1 {
         font-size: 1.5rem;
     }
 
     header p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
-    /* Centralized Button Menu for Home Page */
-    .central-menu li a {
-        width: 80%; /* Expands buttons for better tap targets on mobile */
-    }
-
-    /* Horizontal Menu */
-    .horizontal-menu {
+    .horizontal-menu ul {
         flex-direction: column;
         align-items: center;
     }
 
-    .horizontal-menu li {
-        width: 100%;
+    .horizontal-menu ul li {
         margin: 5px 0;
     }
 
-    .horizontal-menu li a {
-        font-size: 1rem;
-        padding: 10px;
-    }
-
-    /* Table Adjustments */
+    /* Adjust table for smaller screens */
     .table-wrapper {
-        padding: 0 10px; /* Adds padding to the table wrapper for mobile */
+        overflow-x: scroll;
     }
 
     table, th, td {
-        font-size: 0.8rem;
-        white-space: nowrap; /* Prevents text wrapping to keep table compact */
-    }
-
-    /* Footer Styling */
-    footer p {
         font-size: 0.9rem;
     }
-}
-
-/* Ensure min-width for columns in match schedule table */
-th {
-    min-width: 100px; /* Default minimum width for table headers */
 }
