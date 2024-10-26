@@ -44,7 +44,7 @@ header p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 50vh; /* Centers vertically within viewport */
+    height: 50vh;
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -71,7 +71,7 @@ header p {
 .central-menu li a:hover {
     background-color: #ffffff;
     color: #e50914;
-    transform: translateY(-3px); /* Adds a slight hover lift */
+    transform: translateY(-3px);
 }
 
 /* Horizontal Menu Styling for Other Pages */
@@ -108,7 +108,7 @@ header p {
 
 /* Table Styling for All Pages */
 .table-wrapper {
-    overflow-x: auto; /* Enables horizontal scrolling on mobile */
+    overflow-x: auto;
     width: 100%;
     margin-bottom: 20px;
 }
@@ -118,7 +118,7 @@ table {
     border-collapse: collapse;
     background-color: #1e1e1e;
     color: #ffffff;
-    min-width: 600px; /* Ensures table does not shrink too small */
+    min-width: 600px; /* Ensures table does not shrink too small on small screens */
 }
 
 table, th, td {
@@ -163,7 +163,7 @@ footer p {
     }
 
     #team-logo {
-        width: 60px;  /* Adjust logo size for smaller screens */
+        width: 60px;
         margin: 0 auto 10px;
     }
 
@@ -177,7 +177,7 @@ footer p {
 
     /* Centralized Button Menu for Home Page */
     .central-menu li a {
-        width: 80%; /* Expands buttons for better tap targets on mobile */
+        width: 80%;
     }
 
     /* Horizontal Menu */
@@ -198,11 +198,13 @@ footer p {
 
     /* Table Adjustments */
     .table-wrapper {
-        padding: 0 10px; /* Adds padding to the table wrapper for mobile */
+        padding: 0 10px;
+        overflow-x: auto; /* Ensures horizontal scroll on smaller devices */
     }
 
     table, th, td {
-        font-size: 0.8rem; /* Smaller font size for table content */
+        font-size: 0.8rem;
+        white-space: nowrap; /* Prevents text wrapping to keep table compact */
     }
 
     /* Footer Styling */
