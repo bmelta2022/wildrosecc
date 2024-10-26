@@ -5,8 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wild Rose CC - Gallery</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        let slideIndex = 0;
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+    </script>
 </head>
-<body>
+<body onload="showSlides()">
     <header>
         <img src="logo.png" alt="Wild Rose CC Logo" style="height: 50px;">
         <h1>Wild Rose CC</h1>
@@ -24,12 +37,21 @@
     </nav>
     <main>
         <h2>Gallery</h2>
-        <div class="gallery-container">
-            <!-- Assuming example image names -->
-            <img src="gallery1.jpg" alt="Gallery Image 1" class="gallery-image">
-            <img src="gallery2.jpg" alt="Gallery Image 2" class="gallery-image">
-            <img src="gallery3.jpg" alt="Gallery Image 3" class="gallery-image">
-            <!-- Add more images as needed -->
+        <div class="slideshow-container">
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+                <img src="gallery1.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="gallery2.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="gallery3.jpg" style="width:100%">
+            </div>
+
+            <!-- Add more slides as needed -->
         </div>
     </main>
     <footer>
