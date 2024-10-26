@@ -1,7 +1,7 @@
 /* General body styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: black;  /* Ensures the overall background remains consistent */
+    background-color: black;
     color: white;
     margin: 0;
     padding: 0;
@@ -64,51 +64,34 @@ footer {
     padding: 10px 0;
 }
 
-/* Table styles */
-table {
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: black; /* Changed from white to black */
 }
 
-th, td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid grey;
-    color: white; /* Text color changed to white */
-    background-color: black; /* Ensure cells have black background */
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
 
-thead {
-    background-color: #333; /* Darker shade for header */
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
 }
 
-tr:hover {
-    background-color: #555; /* Hover effect with a slightly lighter black */
-}
-
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li a {
-        display: block;
-        width: 100%;
-    }
-
-    header, footer, main {
-        padding: 10px;
-    }
-
-    table, th, td {
-        font-size: 14px;  /* Smaller font size for tables on very small screens */
-    }
-}
-
-@media (max-width: 480px) {
-    header h1, nav ul li a, footer p {
-        font-size: 16px; /* Adjust font size for very small screens */
-    }
+/* Progress bar */
+.progress-bar {
+    position: absolute;
+    bottom: 0;
+    background: red;
+    height: 5px;
+    width: 0%;
 }
