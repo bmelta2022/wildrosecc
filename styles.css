@@ -15,6 +15,11 @@ header {
     text-align: center;
 }
 
+header img {
+    height: 50px;
+    vertical-align: middle;
+}
+
 /* Navigation styles */
 nav {
     background-color: black;
@@ -69,7 +74,6 @@ table {
     border-collapse: collapse;
     margin-top: 20px;
     border: 1px solid white;
-    font-size: 14px;
 }
 
 th, td {
@@ -89,74 +93,63 @@ tr:hover {
     background-color: #333;
 }
 
+/* Gallery styles */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
-    /* Header and Logo */
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li a {
+        width: 100%; /* Full width links for easier touch interaction */
+        text-align: center;
+    }
+
+    table, .gallery-container {
+        grid-template-columns: 1fr; /* Adjust grid for smaller screens */
+    }
+
+    .gallery-image {
+        max-width: 100%;
+    }
+
     header img {
         height: 40px;
     }
 
-    /* Navigation */
-    nav ul li {
-        width: 100%; /* Stack navigation links vertically on small screens */
-        margin: 0;
-    }
-
-    nav ul li a {
-        display: block;
+    main, footer {
         padding: 10px;
-        font-size: 16px;
-        text-align: center;
-        border-radius: 0;
-    }
-
-    /* Main Content */
-    main {
-        padding: 10px;
-        text-align: left;
-    }
-
-    /* Table */
-    table {
-        font-size: 12px; /* Reduce font size on tables for smaller screens */
-        overflow-x: auto;
-        display: block; /* Enable horizontal scrolling for tables */
-    }
-
-    th, td {
-        padding: 8px;
-    }
-
-    /* Footer */
-    footer {
-        padding: 10px;
-        font-size: 14px;
     }
 }
 
 @media (max-width: 480px) {
-    /* Header Font Size */
-    header h1 {
-        font-size: 24px;
+    header {
+        padding: 10px;
     }
 
-    /* Navigation Font Size */
+    header h1 {
+        font-size: 18px; /* Smaller font size for header on very small screens */
+    }
+
     nav ul li a {
-        font-size: 14px;
         padding: 8px;
     }
 
-    /* Table Font Size */
     table {
-        font-size: 10px;
-    }
-
-    th, td {
-        padding: 6px;
-    }
-
-    /* General Text Adjustments */
-    main, footer {
-        font-size: 14px;
+        font-size: 12px; /* Smaller font for tables on very small screens */
     }
 }
