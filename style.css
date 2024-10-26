@@ -8,6 +8,10 @@ body {
     line-height: 1.6;
 }
 
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
 /* Header Styling */
 header {
     display: flex;
@@ -129,6 +133,7 @@ footer {
     color: #ffffff;
     text-align: center;
     padding: 1.5rem;
+    margin-top: 2rem;
 }
 
 /* Responsive Adjustments */
