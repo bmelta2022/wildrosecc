@@ -19,22 +19,31 @@
             <li><a href="schedule.html">Match Schedule</a></li>
             <li><a href="stats.html">Statistics</a></li>
             <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html" class="active">Contact Us</a></li>
         </ul>
     </nav>
     <main>
         <h2>Contact Us</h2>
-        <p>If you have any questions or would like to get in touch, please send us a message:</p>
-        <form action="mailto:info@wildrosecc.com" method="post" enctype="text/plain">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name"><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email"><br>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message"></textarea><br>
-            <input type="submit" value="Send">
-        </form>
-        <p>Follow us on <a href="https://www.facebook.com/profile.php?id=61555276002391" target="_blank">Facebook</a> for updates and more information.</p>
+        <p>If you have any questions or would like to get in touch, please follow us on Facebook for live updates and interact with our community!</p>
+        
+        <!-- Facebook follow button -->
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0" nonce="YOUR_NONCE"></script>
+        <div class="fb-follow" data-href="https://www.facebook.com/profile.php?id=61555276002391" data-layout="standard" data-size="large" data-show-faces="true"></div>
+
+        <!-- Facebook Page Plugin -->
+        <div class="fb-page" 
+            data-href="https://www.facebook.com/profile.php?id=61555276002391" 
+            data-tabs="timeline" 
+            data-width="" 
+            data-height="" 
+            data-small-header="false" 
+            data-adapt-container-width="true" 
+            data-hide-cover="false" 
+            data-show-facepile="true">
+        </div>
+
+        <p>You can also email us for more information at <a href="mailto:info@wildrosecc.com">info@wildrosecc.com</a>.</p>
     </main>
     <footer>
         <p>Contact us at <a href="mailto:info@wildrosecc.com">info@wildrosecc.com</a>.</p>
