@@ -133,23 +133,19 @@ footer {
 /* Responsive table styling */
 table {
     width: 100%;
-    border-collapse: collapse;
-    background-color: black;
+    border-collapse: collapse; /* Essential for clean table borders */
+    background-color: black; /* Keeps background consistent */
 }
 
 th, td {
     padding: 8px;
     text-align: left;
-    border: none; /* Ensures no visible border between cells */
-    color: white;
+    border-bottom: 1px solid grey; /* Dividing lines for each cell */
+    color: white; /* Text color for readability */
 }
 
-thead {
-    background-color: #333; /* Dark shade for header */
-}
-
-tr:hover {
-    background-color: #555; /* Lighter shade for hover */
+thead th {
+    border-bottom: 2px solid grey; /* Slightly thicker bottom border for header */
 }
 
 /* Media Queries for responsiveness */
@@ -173,7 +169,7 @@ tr:hover {
     }
 
     .slideshow-container {
-        max-width: 100%; /* Adjust to full width for mobile devices */
+        max-width:  ty%; /* Adjust to full width for mobile devices */
     }
 }
 
