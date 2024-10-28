@@ -131,41 +131,24 @@ footer {
 /* Responsive table styling */
 table {
     width: 100%;
-    border-collapse: collapse; /* Ensures that borders between cells are merged into a single border */
+    border-collapse: collapse;
     background-color: black;
-    margin: 0 auto; /* Centers the table horizontally */
 }
 
 th, td {
     padding: 8px;
     text-align: left;
-    border-right: none; /* Remove right borders from cells */
-    border-left: none;  /* Remove left borders from cells */
-    border-top: 1px solid grey;  /* Keeps top border */
-    border-bottom: 1px solid grey;  /* Keeps bottom border */
-    color: white;
-    font-size: 14px;
+    border: 1px solid grey;
+    font-size: 14px; /* Smaller font size for readability on small devices */
 }
 
-thead th {
-    border-top: none; /* No border on the top of the header if not desired */
-    background-color: #333;
-}
-
-tbody tr:last-child td {
-    border-bottom: none; /* Remove the bottom border on the last row */
+thead {
+    background-color: #333; /* Dark shade for header */
 }
 
 tr:hover {
-    background-color: #555; /* Highlight for rows on hover, no change */
+    background-color: #555; /* Lighter shade for hover */
 }
-
-/* Ensure that the outer borders of the table are clean */
-table {
-    border: 1px solid grey; /* Add a single border around the entire table */
-    border-radius: 5px; /* Optional: adds rounded corners to the table */
-}
-
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
