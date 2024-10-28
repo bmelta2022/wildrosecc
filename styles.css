@@ -17,7 +17,7 @@ header {
 }
 
 header img {
-    height: 40px; /* Same height on all devices for consistency */
+    height: 40px; /* Standard height across all devices */
 }
 
 /* Navigation styles */
@@ -31,7 +31,7 @@ nav ul {
     list-style-type: none;
     margin: 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Stay horizontal on desktop */
     justify-content: center;
 }
 
@@ -99,7 +99,7 @@ footer {
 /* Slideshow container */
 .slideshow-container {
     position: relative;
-    max-width: 95%;
+    max-width: 100%; /* Full width on all devices */
     margin: 20px auto;
 }
 
@@ -150,36 +150,35 @@ tr:hover {
     background-color: #555;
 }
 
-/* Media Queries for mobile-specific styles */
+/* Media Queries for responsiveness */
 @media (max-width: 768px) {
-    .tabcontent, .table-responsive {
-        max-height: 400px; /* Set a fixed maximum height */
-        overflow-y: scroll; /* Enable vertical scrolling */
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS devices */
-    }
-
     nav ul {
-        flex-direction: column;
+        flex-direction: column; /* Stack navigation vertically on smaller screens */
     }
 
     nav ul li a {
         display: block; /* Full width links for easier touch */
         text-align: center;
-    }
-
-    header img {
-        height: 35px; /* Adjust header image size */
+        padding: 12px 20px; /* Larger touch targets */
     }
 
     .tab button {
-        padding: 10px 15px; /* Adjust button padding */
-        font-size: 14px; /* Adjust font size for tabs */
+        padding: 10px 15px; /* Reduce padding for smaller screens */
+        font-size: 14px; /* Reduce font size for compact display */
+    }
+
+    header img {
+        height: 35px; /* Slightly smaller to fit smaller screens */
     }
 }
 
 @media (max-width: 480px) {
     th, td {
-        padding: 6px; /* Smaller padding in table cells */
-        font-size: 12px; /* Smaller font size for better readability */
+        padding: 6px; /* Reduce padding to fit more content */
+        font-size: 12px; /* Reduce font size for better legibility */
+    }
+
+    .tab button {
+        font-size: 12px; /* Smaller font for tighter spaces */
     }
 }
