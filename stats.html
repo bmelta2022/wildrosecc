@@ -17,76 +17,31 @@
             <li><a href="about.html">About Us</a></li>
             <li><a href="roster.html">Team Roster</a></li>
             <li><a href="schedule.html">Match Schedule</a></li>
-            <li><a href="stats.html">Statistics</a></li>
+            <li><a href="stats.html" class="active">Statistics</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </nav>
     <main>
-        <h2>Batting Statistics</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Player</th>
-                    <th>Matches</th>
-                    <th>Innings</th>
-                    <th>NO</th>
-                    <th>Runs</th>
-                    <th>Balls Faced</th>
-                    <th>Average</th>
-                    <th>Strike Rate</th>
-                    <th>High Score</th>
-                    <th>100s</th>
-                    <th>50s</th>
-                    <th>4s</th>
-                    <th>6s</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Aamir Nazir</td><td>12</td><td>12</td><td>1</td><td>424</td><td>357</td><td>38.55</td><td>118.77</td><td>128</td><td>2</td><td>0</td><td>15</td><td>32</td></tr>
-                <tr><td>Farhan Pervez</td><td>12</td><td>11</td><td>1</td><td>275</td><td>389</td><td>27.50</td><td>70.69</td><td>69</td><td>0</td><td>0</td><td>3</td><td>11</td></tr>
-                <tr><td>Abhinav Arora</td><td>10</td><td>10</td><td>1</td><td>251</td><td>246</td><td>27.89</td><td>102.03</td><td>76</td><td>0</td><td>1</td><td>7</td><td>18</td></tr>
-                <tr><td>Nauman Malik</td><td>11</td><td>10</td><td>0</td><td>240</td><td>274</td><td>24.00</td><td>87.59</td><td>49</td><td>0</td><td>0</td><td>3</td><td>18</td></tr>
-                <tr><td>Mahmood Bilal</td><td>7</td><td>6</td><td>0</td><td>114</td><td>98</td><td>19.00</td><td>116.33</td><td>22</td><td>0</td><td>0</td><td>5</td><td>10</td></tr>
-                <tr><td>Rabi Arif</td><td>7</td><td>6</td><td>1</td><td>110</td><td>107</td><td>22.00</td><td>102.80</td><td>33</td><td>0</td><td>0</td><td>7</td><td>4</td></tr>
-                <tr><td>Sulman Sheikh</td><td>11</td><td>10</td><td>4</td><td>69</td><td>88</td><td>11.50</td><td>78.41</td><td>22</td><td>0</td><td>0</td><td>2</td><td>3</td></tr>
-                <tr><td>Kamal Sarna</td><td>8</td><td>7</td><td>1</td><td>63</td><td>141</td><td>10.50</td><td>44.68</td><td>18</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>Shahbaz Khattar</td><td>5</td><td>4</td><td>0</td><td>42</td><td>66</td><td>10.50</td><td>63.64</td><td>27</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-                <tr><td>Daksh Khan Floater</td><td>2</td><td>2</td><td>0</td><td>40</td><td>44</td><td>20.00</td><td>90.91</td><td>24</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
-                <!-- Add the rest of the players' batting stats here -->
-            </tbody>
-        </table>
+        <div class="tab">
+            <button class="tablinks" onclick="openYear(event, '2024')">2024 Statistics</button>
+            <button class="tablinks" onclick="openYear(event, '2025')">2025 Statistics</button>
+        </div>
 
-        <h2>Bowling Statistics</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Player</th>
-                    <th>Matches</th>
-                    <th>Innings</th>
-                    <th>Overs</th>
-                    <th>Runs Conceded</th>
-                    <th>Wickets</th>
-                    <th>Best Bowling</th>
-                    <th>Economy</th>
-                    <th>Average</th>
-                    <th>Strike Rate</th>
-                    <th>4W</th>
-                    <th>5W</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Abhinav Arora</td><td>10</td><td>10</td><td>51.0</td><td>240</td><td>20</td><td>4/37</td><td>4.71</td><td>12.00</td><td>15.3</td><td>0</td><td>2</td></tr>
-                <tr><td>Farhan Pervez</td><td>12</td><td>12</td><td>70.1</td><td>362</td><td>18</td><td>3/21</td><td>5.16</td><td>20.11</td><td>23.4</td><td>0</td><td>0</td></tr>
-                <tr><td>Aamir Nazir</td><td>12</td><td>12</td><td>61.1</td><td>334</td><td>15</td><td>3/20</td><td>5.46</td><td>22.27</td><td>24.5</td><td>0</td><td>0</td></tr>
-                <tr><td>Mahmood Bilal</td><td>7</td><td>7</td><td>37.3</td><td>207</td><td>9</td><td>3/17</td><td>5.52</td><td>23.00</td><td>25.0</td><td>0</td><td>0</td></tr>
-                <tr><td>Nauman Malik</td><td>11</td><td>6</td><td>29.3</td><td>151</td><td>8</td><td>3/25</td><td>5.12</td><td>18.88</td><td>22.1</td><td>0</td><td>0</td></tr>
-                <!-- Add the rest of the players' bowling stats here -->
-            </tbody>
-        </table>
+        <div id="2024" class="tabcontent">
+            <h2>2024 Batting and Bowling Statistics</h2>
+            <!-- Insert tables or content specific to 2024 here -->
+        </div>
+
+        <div id="2025" class="tabcontent">
+            <h2>2025 Batting and Bowling Statistics</h2>
+            <!-- Insert tables or content specific to 2025 here -->
+        </div>
     </main>
     <footer>
         <p>Contact us at <a href="mailto:info@wildrosecc.com">info@wildrosecc.com</a>.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
