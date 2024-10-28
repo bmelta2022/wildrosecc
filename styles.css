@@ -12,7 +12,7 @@ body {
 header {
     background-color: red;
     color: white;
-    padding: 10px 5px; /* Adjusted padding for mobile and general consistency */
+    padding: 10px 5px; /* Consistent padding for mobile and general use */
     text-align: center;
 }
 
@@ -36,7 +36,7 @@ nav ul {
 }
 
 nav ul li {
-    display: inline-block; /* Inline-block for better control on mobile */
+    display: inline-block; /* Better control on mobile */
 }
 
 nav ul li a {
@@ -49,39 +49,39 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: darkred; /* Darker red on hover for visual feedback */
+    background-color: darkred; /* Darker red on hover */
 }
 
 /* Tab button styles */
 .tab button {
-    background-color: red; /* Red background for tabs */
-    color: white; /* White text for contrast */
-    padding: 15px 30px; /* Larger padding for a bigger, more accessible button */
-    font-size: 16px; /* Larger font size for readability */
+    background-color: red;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
     border: none;
     outline: none;
     cursor: pointer;
-    border-radius: 5px; /* Rounded corners */
-    margin: 5px; /* Margin around buttons */
-    transition: background-color 0.3s; /* Smooth transition for visual effect */
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.3s;
 }
 
 .tab button:hover {
-    background-color: darkred; /* Darker shade on hover */
+    background-color: darkred;
 }
 
 .tab button.active {
-    background-color: #b30000; /* Specific red shade for active state */
+    background-color: #b30000;
 }
 
 /* Tab content styles */
 .tabcontent {
     display: none; /* Hide content initially */
     padding: 20px;
-    border: none; /* Aligns visually with the tab buttons, no border */
-    background-color: #222; /* Dark background for content area */
-    color: white; /* Ensures text is visible */
-    margin-top: 5px; /* Space between tabs and content */
+    border: none;
+    background-color: #222;
+    color: white;
+    margin-top: 5px;
 }
 
 /* Main content styles */
@@ -101,13 +101,13 @@ footer {
 /* Slideshow container */
 .slideshow-container {
     position: relative;
-    max-width: 95%; /* Full width with slight margin */
+    max-width: 95%;
     margin: 20px auto;
 }
 
 .mySlides {
-    display: none; /* Hide slides by default */
-    width: 100%; /* Full width */
+    display: none;
+    width: 100%;
 }
 
 /* Fading animation */
@@ -127,55 +127,59 @@ footer {
     bottom: 0;
     background: red;
     height: 5px;
-    width: 0%; /* Starts from zero, grows with animation */
+    width: 0%;
 }
 
 /* Responsive table styling */
 table {
     width: 100%;
-    border-collapse: collapse; /* Essential for clean table borders */
-    background-color: black; /* Keeps background consistent */
+    border-collapse: collapse;
+    background-color: black;
 }
 
 th, td {
     padding: 8px;
     text-align: left;
-    border-bottom: 1px solid grey; /* Dividing lines for each cell */
-    color: white; /* Text color for readability */
+    border: 1px solid grey; /* Complete grid lines for clarity */
+    color: white;
 }
 
 thead th {
-    border-bottom: 2px solid grey; /* Slightly thicker bottom border for header */
+    background-color: #333;
+}
+
+tr:hover {
+    background-color: #555;
 }
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
     nav ul {
-        flex-direction: column; /* Vertical stacking on smaller screens */
+        flex-direction: column;
     }
 
     nav ul li a {
-        display: block; /* Full width links for easier touch access */
+        display: block;
         text-align: center;
     }
 
     header img {
-        height: 35px; /* Smaller logo on very small devices */
+        height: 35px;
     }
 
     .tab button {
-        padding: 12px 20px; /* Smaller buttons for smaller screens */
-        font-size: 14px; /* Slightly smaller font size for compact display */
+        padding: 12px 20px;
+        font-size: 14px;
     }
 
     .slideshow-container {
-        max-width:  ty%; /* Adjust to full width for mobile devices */
+        max-width: 100%;
     }
 }
 
 @media (max-width: 480px) {
     th, td {
-        padding: 6px; /* Less padding in table cells for compact display */
-        font-size: 12px; /* Further reduced font size for very small screens */
+        padding: 6px;
+        font-size: 12px;
     }
 }
