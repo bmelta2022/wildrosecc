@@ -78,8 +78,10 @@ nav ul li a:hover {
 .tabcontent {
     display: none; /* Hide content initially */
     padding: 20px;
-    border: 1px solid #ccc;
-    border-top: none; /* Aligns visually with the tab buttons */
+    border: none; /* Aligns visually with the tab buttons, no border */
+    background-color: #222; /* Dark background for content area */
+    color: white; /* Ensures text is visible */
+    margin-top: 5px; /* Space between tabs and content */
 }
 
 /* Main content styles */
@@ -138,8 +140,8 @@ table {
 th, td {
     padding: 8px;
     text-align: left;
-    border: 1px solid grey;
-    font-size: 14px; /* Smaller font size for readability on small devices */
+    border: none; /* Ensures no visible border between cells */
+    color: white;
 }
 
 thead {
