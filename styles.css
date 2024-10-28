@@ -12,12 +12,12 @@ body {
 header {
     background-color: red;
     color: white;
-    padding: 10px 5px; /* Consistent padding for mobile and general use */
+    padding: 10px 5px; /* Uniform padding */
     text-align: center;
 }
 
 header img {
-    height: 40px; /* Optimal size for mobile and desktop */
+    height: 40px; /* Same height on all devices for consistency */
 }
 
 /* Navigation styles */
@@ -31,12 +31,12 @@ nav ul {
     list-style-type: none;
     margin: 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Keeps horizontal layout on all devices */
     justify-content: center;
 }
 
 nav ul li {
-    display: inline-block; /* Better control on mobile */
+    display: inline-block;
 }
 
 nav ul li a {
@@ -45,18 +45,18 @@ nav ul li a {
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 nav ul li a:hover {
-    background-color: darkred; /* Darker red on hover */
+    background-color: darkred;
 }
 
 /* Tab button styles */
 .tab button {
     background-color: red;
     color: white;
-    padding: 15px 30px;
+    padding: 15px 30px; /* Consider adjusting padding for smaller screens if necessary */
     font-size: 16px;
     border: none;
     outline: none;
@@ -76,12 +76,10 @@ nav ul li a:hover {
 
 /* Tab content styles */
 .tabcontent {
-    display: none; /* Hide content initially */
+    display: none;
     padding: 20px;
-    border: none;
     background-color: #222;
     color: white;
-    margin-top: 5px;
 }
 
 /* Main content styles */
@@ -140,7 +138,7 @@ table {
 th, td {
     padding: 8px;
     text-align: left;
-    border: 1px solid grey; /* Complete grid lines for clarity */
+    border: 1px solid grey;
     color: white;
 }
 
@@ -152,34 +150,20 @@ tr:hover {
     background-color: #555;
 }
 
-/* Media Queries for responsiveness */
+/* Media Queries for minor adjustments */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
+    .tab button, nav ul li a {
+        padding: 10px 20px; /* Slightly reduced padding for better fit */
+        font-size: 14px; /* Smaller font size for tabs and navigation links */
     }
-
-    nav ul li a {
-        display: block;
-        text-align: center;
-    }
-
     header img {
-        height: 35px;
-    }
-
-    .tab button {
-        padding: 12px 20px;
-        font-size: 14px;
-    }
-
-    .slideshow-container {
-        max-width: 100%;
+        height: 35px; /* Slightly smaller image for mobile devices */
     }
 }
 
 @media (max-width: 480px) {
     th, td {
-        padding: 6px;
-        font-size: 12px;
+        padding: 6px; /* Reduced padding in table cells */
+        font-size: 12px; /* Smaller font size for better readability */
     }
 }
