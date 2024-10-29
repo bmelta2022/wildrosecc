@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wild Rose CC - Home</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
-
 <body>
     <header>
         <img src="logo.png" alt="Wild Rose CC Logo" style="height: 50px;">
@@ -29,128 +26,10 @@
         <h2>Welcome to Wild Rose CC!</h2>
         <p>Check here for the latest news and updates on our matches!</p>
 
-        <!-- Countdown Timer -->
-        <section id="next-match">
-            <h3>Next Match Countdown</h3>
-            <p id="countdown">Loading...</p>
-        </section>
-
-        <!-- Latest News Section -->
-        <section id="news">
-            <h3>Latest News</h3>
-            <ul id="news-list">
-                <li>Loading news...</li>
-            </ul>
-        </section>
-
-        <!-- Statistics and Highlights -->
-        <section id="highlights">
-            <h3>Team Statistics & Highlights</h3>
-            <button onclick="showStats()">View Stats</button>
-            <button onclick="showHighlights()">Watch Highlights</button>
-        </section>
-
     </main>
 
-    <!-- Footer with Contact and Social Media Links -->
     <footer>
         <p>Contact us at <a href="mailto:info@wildrosecc.com">info@wildrosecc.com</a>.</p>
-        <div class="social-media">
-            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
-            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
-        </div>
     </footer>
-
-    <!-- Modals for Stats and Highlights -->
-    <div id="stats-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('stats-modal')">&times;</span>
-            <h3>Team Statistics</h3>
-            <p>Loading team stats...</p>
-        </div>
-    </div>
-
-    <div id="highlights-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('highlights-modal')">&times;</span>
-            <h3>Match Highlights</h3>
-            <video controls width="100%">
-                <source src="highlight.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-
-    <script>
-        // Countdown Timer
-        function countdown() {
-            const matchDate = new Date("2023-11-15T18:30:00"); // Update with actual match date
-            setInterval(() => {
-                const now = new Date().getTime();
-                const timeLeft = matchDate - now;
-
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-                document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-                if (timeLeft < 0) {
-                    document.getElementById("countdown").innerHTML = "Match Started!";
-                }
-            }, 1000);
-        }
-        countdown();
-
-        // Load Latest News
-        $(document).ready(function () {
-            const news = ["Match rescheduled due to weather.", "New player joins the team.", "Training sessions announced."];
-            const newsList = $("#news-list");
-            newsList.empty();
-            news.forEach(item => newsList.append(`<li>${item}</li>`));
-        });
-
-        // Modal Functions
-        function showStats() {
-            document.getElementById('stats-modal').style.display = 'block';
-        }
-        function showHighlights() {
-            document.getElementById('highlights-modal').style.display = 'block';
-        }
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
-    </script>
-    <style>
-        /* Basic modal styling */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-content {
-            background-color: white;
-            padding: 20px;
-            width: 60%;
-            margin: auto;
-        }
-        .close {
-            float: right;
-            cursor: pointer;
-            font-size: 20px;
-        }
-        .social-media a img {
-            width: 20px;
-            margin: 0 5px;
-        }
-    </style>
 </body>
-</html>
+</html> 
