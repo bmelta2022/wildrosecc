@@ -41,34 +41,48 @@
     </footer>
     <script>
         let slideIndex = 0;
+        const slideInterval = 3000; // Duration for each slide (3 seconds)
+        const progressBarInterval = 30; // Interval for progress bar animation
+
         showSlides();
 
         function showSlides() {
             let slides = document.getElementsByClassName("mySlides");
             let progressBar = document.querySelector(".progress-bar");
+            
+            // Hide all slides initially
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
+            
+            // Move to the next slide
             slideIndex++;
             if (slideIndex > slides.length) { slideIndex = 1 }
+            
+            // Show the current slide
             slides[slideIndex - 1].style.display = "block";
-            progressBar.style.width = '0%'; // Reset progress bar
-            animateProgressBar(); // Start filling the progress bar
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
+
+            // Reset and animate the progress bar
+            progressBar.style.width = '0%';
+            animateProgressBar();
+            
+            // Change slide every 3 seconds
+            setTimeout(showSlides, slideInterval);
         }
 
         function animateProgressBar() {
             let progressBar = document.querySelector(".progress-bar");
             let width = 0;
-            let interval = setInterval(frame, 30); // Adjust interval for smooth animation
-            function frame() {
+            let increment = 100 / (slideInterval / progressBarInterval); // Calculate how much to increment per interval
+
+            let interval = setInterval(() => {
                 if (width >= 100) {
-                    clearInterval(interval);
+                    clearInterval(interval); // Stop the interval when the bar reaches 100%
                 } else {
-                    width++;
+                    width += increment;
                     progressBar.style.width = width + '%';
                 }
-            }
+            }, progressBarInterval);
         }
     </script>
 </body>
