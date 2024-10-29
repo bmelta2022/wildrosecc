@@ -1,3 +1,4 @@
+// Tab functionality with fade-in/out transitions
 function openYear(evt, year) {
     // Hide all tab content by default with a fade-out transition
     document.querySelectorAll('.tabcontent').forEach(content => {
@@ -34,6 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.error('No tabs found to activate on page load.');
     }
+
+    // Initialize slideshow on page load
+    showSlides();
 });
 
 // Optional: Add keyboard accessibility to tabs
@@ -44,3 +48,46 @@ document.querySelectorAll('.tablinks').forEach(link => {
         }
     });
 });
+
+// Slideshow with synchronized progress bar
+let slideIndex = 0;
+let progressInterval;
+
+function showSlides() {
+    const slides = document.querySelectorAll(".mySlides");
+    const progressBar = document.querySelector(".progress-bar");
+
+    // Hide all slides initially
+    slides.forEach(slide => slide.style.display = "none");
+
+    // Increment slide index (loop back to start if at the end)
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; }
+
+    // Display the current slide and reset progress bar
+    slides[slideIndex - 1].style.display = "block";
+    progressBar.style.width = "0%";
+
+    // Animate the progress bar over the duration of the slide display
+    let width = 0;
+    progressInterval = setInterval(() => {
+        width += 1;
+        progressBar.style.width = width + "%";
+        if (width >= 100) {
+            clearInterval(progressInterval);
+        }
+    }, 50); // 5000ms / 100 steps
+
+    // Move to the next slide after 5 seconds, resetting the interval
+    setTimeout(() => {
+        clearInterval(progressInterval);
+        showSlides();
+    }, 5000); // Display each slide for 5 seconds
+}
+
+// Manual navigation controls for slideshow
+function changeSlide(n) {
+    clearTimeout(progressInterval); // Stop auto-switching
+    slideIndex += n - 1; // Adjust slide index
+    showSlides(); // Show next or previous slide
+}
