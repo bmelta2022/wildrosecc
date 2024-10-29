@@ -18,6 +18,11 @@ header {
 
 header img {
     height: 40px; /* Standard height across all devices */
+    transition: transform 0.3s;
+}
+
+header img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
 /* Navigation styles */
@@ -45,11 +50,17 @@ nav ul li a {
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
 nav ul li a:hover {
     background-color: darkred;
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Active page indication */
+nav ul li a.active {
+    background-color: #b30000;
 }
 
 /* Tab button styles */
@@ -63,15 +74,17 @@ nav ul li a:hover {
     cursor: pointer;
     border-radius: 5px;
     margin: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .tab button:hover {
     background-color: darkred;
+    transform: scale(1.05); /* Slight zoom effect */
 }
 
 .tab button.active {
     background-color: #b30000;
+    transform: scale(1.1); /* Slightly more pronounced on active tab */
 }
 
 /* Tab content styles */
@@ -106,17 +119,36 @@ footer {
 .mySlides {
     display: none;
     width: 100%;
+    animation: fadeSlide 1.5s; /* Fading animation for slideshow images */
 }
 
-/* Fading animation */
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade {
-    from {opacity: .4} 
+@keyframes fadeSlide {
+    from {opacity: 0.4}
     to {opacity: 1}
+}
+
+/* Slideshow navigation controls */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: transform 0.3s;
+    border-radius: 0 3px 3px 0;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    transform: scale(1.2); /* Slight zoom on hover */
 }
 
 /* Progress bar for slideshow */
@@ -125,10 +157,16 @@ footer {
     bottom: 0;
     background: red;
     height: 5px;
-    width: 0%;
+    width: 0;
+    animation: loadProgress 5s infinite;
 }
 
-/* Responsive table styling */
+@keyframes loadProgress {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Table styling with hover effect */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -140,6 +178,7 @@ th, td {
     text-align: left;
     border: 1px solid grey;
     color: white;
+    transition: background-color 0.3s;
 }
 
 thead th {
@@ -182,5 +221,3 @@ tr:hover {
         font-size: 12px; /* Smaller font for tighter spaces */
     }
 }
-
-
