@@ -8,6 +8,11 @@ body {
     overflow-x: hidden;
 }
 
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
 /* Header styles */
 header {
     background-color: red;
@@ -42,6 +47,7 @@ nav ul {
 
 nav ul li {
     display: inline-block;
+    position: relative; /* For dropdown */
 }
 
 nav ul li a {
@@ -60,6 +66,28 @@ nav ul li a:hover {
 
 nav ul li a.active {
     background-color: #b30000;
+}
+
+/* Dropdown menu */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+    border-radius: 5px;
+    padding: 5px 0;
+    z-index: 10;
+}
+
+nav ul li:hover ul {
+    display: block;
+    animation: dropdown 0.3s ease-in-out;
+}
+
+@keyframes dropdown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Tab button styles */
@@ -173,6 +201,7 @@ table th, table td {
     border: 1px solid grey;
     color: white;
     font-size: 14px;
+    cursor: pointer; /* Makes columns interactive for sorting */
 }
 
 table thead th {
@@ -249,4 +278,45 @@ table::-webkit-scrollbar-thumb {
 
 table::-webkit-scrollbar-track {
     background-color: #333;
+}
+
+/* Progress bar for page scroll */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background-color: red;
+    z-index: 100;
+    transition: width 0.2s ease-out;
+}
+
+/* Floating Action Button (FAB) */
+.fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: red;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    transition: transform 0.3s;
+}
+
+.fab:hover {
+    transform: scale(1.1);
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.animate-slide {
+    animation: slideIn 0.5s ease-out;
 }
