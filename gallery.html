@@ -42,7 +42,7 @@
     <script>
         let slideIndex = 0;
         const slideInterval = 3000; // Duration for each slide (3 seconds)
-        const progressBarInterval = 30; // Interval for progress bar animation
+        const progressBarInterval = 10; // Faster interval for smoother progress bar animation
 
         showSlides();
 
@@ -73,7 +73,7 @@
         function animateProgressBar() {
             let progressBar = document.querySelector(".progress-bar");
             let width = 0;
-            let increment = 100 / (slideInterval / progressBarInterval); // Calculate how much to increment per interval
+            let increment = 100 / (slideInterval / progressBarInterval); // Calculate increment to reach 100% at slideInterval
 
             let interval = setInterval(() => {
                 if (width >= 100) {
