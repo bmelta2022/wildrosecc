@@ -5,7 +5,7 @@ body {
     color: white;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+    overflow-x: hidden;
 }
 
 /* Header styles */
@@ -17,7 +17,7 @@ header {
 }
 
 header img {
-    height: 40px; /* Standard height across all devices */
+    height: 50px;
     transition: transform 0.3s;
 }
 
@@ -50,7 +50,7 @@ nav ul li a {
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 nav ul li a:hover {
@@ -58,16 +58,22 @@ nav ul li a:hover {
     transform: scale(1.05); /* Slight zoom effect */
 }
 
-/* Active page indication */
 nav ul li a.active {
     background-color: #b30000;
 }
 
 /* Tab button styles */
+.tab {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
 .tab button {
     background-color: red;
     color: white;
-    padding: 15px 30px;
+    padding: 10px 20px;
     font-size: 16px;
     border: none;
     outline: none;
@@ -93,12 +99,37 @@ nav ul li a.active {
     padding: 20px;
     background-color: #222;
     color: white;
+    transition: opacity 0.3s ease-in-out;
 }
 
 /* Main content styles */
 main {
     padding: 10px;
     text-align: center;
+}
+
+/* Responsive Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: black;
+    overflow-x: auto;
+}
+
+table th, table td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid grey;
+    color: white;
+    font-size: 14px;
+}
+
+table thead th {
+    background-color: #333;
+}
+
+table tr:hover {
+    background-color: #555;
 }
 
 /* Footer styles */
@@ -109,115 +140,68 @@ footer {
     padding: 10px 0;
 }
 
-/* Slideshow container */
-.slideshow-container {
-    position: relative;
-    max-width: 100%; /* Full width on all devices */
-    margin: 20px auto;
-}
-
-.mySlides {
-    display: none;
-    width: 100%;
-    animation: fadeSlide 1.5s; /* Fading animation for slideshow images */
-}
-
-@keyframes fadeSlide {
-    from {opacity: 0.4}
-    to {opacity: 1}
-}
-
-/* Slideshow navigation controls */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 10px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: transform 0.3s;
-    border-radius: 0 3px 3px 0;
-    background-color: rgba(0,0,0,0.5);
-}
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-    transform: scale(1.2); /* Slight zoom on hover */
-}
-
-/* Progress bar for slideshow */
-.progress-bar {
-    position: absolute;
-    bottom: 0;
-    background: red;
-    height: 5px;
-    width: 0;
-    animation: loadProgress 5s infinite;
-}
-
-@keyframes loadProgress {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-/* Table styling with hover effect */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: black;
-}
-
-th, td {
-    padding: 8px;
-    text-align: left;
-    border: 1px solid grey;
-    color: white;
-    transition: background-color 0.3s;
-}
-
-thead th {
-    background-color: #333;
-}
-
-tr:hover {
-    background-color: #555;
-}
-
-/* Media Queries for responsiveness */
+/* Responsive Styles */
 @media (max-width: 768px) {
+    /* Stack navigation items vertically */
     nav ul {
-        flex-direction: column; /* Stack navigation vertically on smaller screens */
+        flex-direction: column;
+        text-align: center;
     }
 
     nav ul li a {
-        display: block; /* Full width links for easier touch */
-        text-align: center;
-        padding: 12px 20px; /* Larger touch targets */
+        display: block;
+        padding: 12px;
+        font-size: 16px;
     }
 
-    .tab button {
-        padding: 10px 15px; /* Reduce padding for smaller screens */
-        font-size: 14px; /* Reduce font size for compact display */
+    /* Stack tabs vertically */
+    .tab {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Make table scrollable */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap; /* Prevents table cells from breaking */
+    }
+
+    /* Reduce font size for small screens */
+    table th, table td {
+        padding: 6px;
+        font-size: 12px;
     }
 
     header img {
-        height: 35px; /* Slightly smaller to fit smaller screens */
+        height: 35px;
     }
 }
 
 @media (max-width: 480px) {
-    th, td {
-        padding: 6px; /* Reduce padding to fit more content */
-        font-size: 12px; /* Reduce font size for better legibility */
+    /* Adjust padding for touch devices */
+    .tab button {
+        font-size: 14px;
+        padding: 8px 15px;
     }
 
-    .tab button {
-        font-size: 12px; /* Smaller font for tighter spaces */
+    /* Further reduce table font size */
+    table th, table td {
+        padding: 4px;
+        font-size: 10px;
     }
+}
+
+/* Scrollbar styling for table overflow */
+table::-webkit-scrollbar {
+    height: 6px;
+}
+
+table::-webkit-scrollbar-thumb {
+    background-color: darkred;
+    border-radius: 3px;
+}
+
+table::-webkit-scrollbar-track {
+    background-color: #333;
 }
