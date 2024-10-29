@@ -5,6 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wild Rose CC - Gallery</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            background-color: #444;
+            padding: 10px;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Slideshow styling */
+        .slideshow-container {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .mySlides {
+            display: none;
+            position: relative;
+            width: 100%;
+        }
+
+        .mySlides img {
+            width: 100%;
+            vertical-align: middle;
+        }
+
+        /* Progress bar styling */
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 5px;
+            background-color: #4caf50;
+            width: 0%;
+            transition: width linear;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -25,15 +114,17 @@
     <main>
         <div class="slideshow-container">
             <div class="mySlides fade">
-                <img src="gallery1.jpg" style="width:100%">
+                <img src="gallery1.jpg" alt="Gallery Image 1">
+                <div class="progress-bar"></div>
             </div>
             <div class="mySlides fade">
-                <img src="gallery2.jpg" style="width:100%">
+                <img src="gallery2.jpg" alt="Gallery Image 2">
+                <div class="progress-bar"></div>
             </div>
             <div class="mySlides fade">
-                <img src="gallery3.jpg" style="width:100%">
+                <img src="gallery3.jpg" alt="Gallery Image 3">
+                <div class="progress-bar"></div>
             </div>
-            <div class="progress-bar"></div>
         </div>
     </main>
     <footer>
@@ -42,15 +133,14 @@
     <script>
         let slideIndex = 0;
         const slideDuration = 3000; // Duration for each slide (3 seconds)
-        let startTime = null;
 
         function showSlides() {
             let slides = document.getElementsByClassName("mySlides");
-            let progressBar = document.querySelector(".progress-bar");
 
             // Hide all slides
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
+                slides[i].querySelector(".progress-bar").style.width = "0%"; // Reset progress bar
             }
 
             // Move to the next slide
@@ -60,24 +150,16 @@
             // Display the current slide
             slides[slideIndex - 1].style.display = "block";
 
-            // Reset progress bar and start animation
-            progressBar.style.width = '0%';
-            startTime = null; // Reset start time for each slide
-            requestAnimationFrame(animateProgressBar);
+            // Animate progress bar
+            animateProgressBar(slides[slideIndex - 1].querySelector(".progress-bar"));
 
             // Schedule the next slide after slideDuration
             setTimeout(showSlides, slideDuration);
         }
 
-        function animateProgressBar(timestamp) {
-            if (!startTime) startTime = timestamp;
-            const progress = Math.min((timestamp - startTime) / slideDuration, 1); // Calculate progress as a percentage
-            document.querySelector(".progress-bar").style.width = (progress * 100) + '%';
-
-            // Continue animation until progress reaches 100%
-            if (progress < 1) {
-                requestAnimationFrame(animateProgressBar);
-            }
+        function animateProgressBar(progressBar) {
+            progressBar.style.transition = `width ${slideDuration}ms linear`;
+            progressBar.style.width = "100%";
         }
 
         // Initialize the slideshow
