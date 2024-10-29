@@ -135,7 +135,6 @@ main {
     height: 5px;
     background: red;
     width: 0;
-    transition: width 5s linear; /* Synchronized with JavaScript timing */
 }
 
 /* Navigation controls */
