@@ -22,7 +22,7 @@ header img {
 }
 
 header img:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
+    transform: scale(1.1);
 }
 
 /* Navigation styles */
@@ -36,7 +36,7 @@ nav ul {
     list-style-type: none;
     margin: 0;
     display: flex;
-    flex-direction: row; /* Stay horizontal on desktop */
+    flex-direction: row;
     justify-content: center;
 }
 
@@ -55,7 +55,7 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: darkred;
-    transform: scale(1.05); /* Slight zoom effect */
+    transform: scale(1.05);
 }
 
 nav ul li a.active {
@@ -85,12 +85,12 @@ nav ul li a.active {
 
 .tab button:hover {
     background-color: darkred;
-    transform: scale(1.05); /* Slight zoom effect */
+    transform: scale(1.05);
 }
 
 .tab button.active {
     background-color: #b30000;
-    transform: scale(1.1); /* Slightly more pronounced on active tab */
+    transform: scale(1.1);
 }
 
 /* Tab content styles */
@@ -108,12 +108,46 @@ main {
     text-align: center;
 }
 
-/* Responsive Table Styling */
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: 20px auto;
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+    animation: fadeSlide 1.5s;
+}
+
+/* Fading animation for slideshow images */
+@keyframes fadeSlide {
+    from { opacity: 0.4 }
+    to { opacity: 1 }
+}
+
+/* Progress bar for slideshow */
+.progress-bar {
+    position: absolute;
+    bottom: 0;
+    background: red;
+    height: 5px;
+    width: 0;
+    animation: loadProgress 5s infinite;
+}
+
+/* Animation for progress bar filling */
+@keyframes loadProgress {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Table styling with hover effect */
 table {
     width: 100%;
     border-collapse: collapse;
     background-color: black;
-    overflow-x: auto;
 }
 
 table th, table td {
@@ -142,7 +176,6 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    /* Stack navigation items vertically */
     nav ul {
         flex-direction: column;
         text-align: center;
@@ -154,20 +187,17 @@ footer {
         font-size: 16px;
     }
 
-    /* Stack tabs vertically */
     .tab {
         flex-direction: column;
         align-items: center;
     }
 
-    /* Make table scrollable */
     table {
         display: block;
         overflow-x: auto;
-        white-space: nowrap; /* Prevents table cells from breaking */
+        white-space: nowrap;
     }
 
-    /* Reduce font size for small screens */
     table th, table td {
         padding: 6px;
         font-size: 12px;
@@ -179,13 +209,11 @@ footer {
 }
 
 @media (max-width: 480px) {
-    /* Adjust padding for touch devices */
     .tab button {
         font-size: 14px;
         padding: 8px 15px;
     }
 
-    /* Further reduce table font size */
     table th, table td {
         padding: 4px;
         font-size: 10px;
