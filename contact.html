@@ -7,14 +7,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header Section -->
     <header>
         <img src="logo.png" alt="Wild Rose CC Logo" style="height: 50px;">
         <h1>Wild Rose CC</h1>
     </header>
-
-    <!-- Navigation Section -->
-    <nav aria-label="Main Navigation">
+    <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -25,36 +22,22 @@
             <li><a href="contact.html" class="active">Contact Us</a></li>
         </ul>
     </nav>
-
-    <!-- Main Content Section -->
     <main>
         <h2>Contact Us</h2>
-        <p>Follow us on <a href="https://www.facebook.com/profile.php?id=61555276002391" target="_blank" rel="noopener">Facebook</a> for updates and more information.</p>
-
+        <p>Follow us on <a href="https://www.facebook.com/profile.php?id=61555276002391" target="_blank">Facebook</a> for updates and more information.</p>
         <div class="facebook-feed">
-            <!-- Facebook widget embed -->
-            <div class="fb-page"
-                 data-href="https://www.facebook.com/profile.php?id=61555276002391"
-                 data-tabs="timeline"
-                 data-width="100%" <!-- Ensures responsive width -->
-                 data-height=""
-                 data-small-header="false"
-                 data-adapt-container-width="true"
-                 data-hide-cover="false"
-                 data-show-facepile="true">
+            <!-- Insert Facebook widget embed code here -->
+            <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=61555276002391" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
                 <blockquote cite="https://www.facebook.com/profile.php?id=61555276002391" class="fb-xfbml-parse-ignore">
                     <a href="https://www.facebook.com/profile.php?id=61555276002391">Visit our Facebook Page</a>
                 </blockquote>
             </div>
         </div>
     </main>
-
-    <!-- Footer Section -->
     <footer>
         <p>Contact us at <a href="mailto:info@wildrosecc.com">info@wildrosecc.com</a>.</p>
     </footer>
-
-    <!-- Facebook SDK -->
+    <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0"></script>
 </body>
