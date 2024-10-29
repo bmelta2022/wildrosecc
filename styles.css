@@ -21,27 +21,24 @@ header {
     text-align: center;
 }
 
-/* Logo animation */
+/* Logo animation with 360 rotation */
 header img {
     height: 50px;
-    animation: logoAnimation 2s infinite alternate ease-in-out;
+    animation: logoSpin 3s linear infinite;
     transition: transform 0.3s;
 }
 
-@keyframes logoAnimation {
-    0% {
-        transform: scale(1) rotate(0deg);
+@keyframes logoSpin {
+    from {
+        transform: rotate(0deg);
     }
-    50% {
-        transform: scale(1.05) rotate(5deg);
-    }
-    100% {
-        transform: scale(1) rotate(-5deg);
+    to {
+        transform: rotate(360deg);
     }
 }
 
 header img:hover {
-    transform: scale(1.1) rotate(0deg);
+    transform: scale(1.1);
 }
 
 /* Navigation styles */
