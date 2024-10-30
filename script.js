@@ -1,26 +1,22 @@
 // Tab functionality with fade-in/out transitions
 function openYear(evt, year) {
-    // Hide all tab content by default with a fade-out transition
     document.querySelectorAll('.tabcontent').forEach(content => {
-        content.style.opacity = 0; // Start with opacity 0 for fade-out effect
+        content.style.opacity = 0;
         setTimeout(() => {
             content.style.display = 'none';
-        }, 300); // Time matches CSS transition duration
+        }, 300);
     });
 
-    // Remove active class from all tabs
     document.querySelectorAll('.tablinks').forEach(link => {
         link.classList.remove('active');
     });
 
-    // Check if the selected year's content exists
     const selectedTab = document.getElementById(year);
     if (selectedTab) {
-        // Show the selected year's content with fade-in effect and add active class
         setTimeout(() => {
             selectedTab.style.display = 'block';
-            selectedTab.style.opacity = 1; // Fade-in effect
-        }, 300); // Time delay for smooth transition
+            selectedTab.style.opacity = 1;
+        }, 300);
         evt.currentTarget.classList.add('active');
     } else {
         console.error(`Tab content with ID '${year}' not found.`);
@@ -35,18 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.error('No tabs found to activate on page load.');
     }
-
-    // Initialize slideshow on page load
     showSlides();
-});
-
-// Optional: Add keyboard accessibility to tabs
-document.querySelectorAll('.tablinks').forEach(link => {
-    link.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            link.click();
-        }
-    });
 });
 
 // Slideshow with synchronized progress bar
@@ -57,18 +42,14 @@ function showSlides() {
     const slides = document.querySelectorAll(".mySlides");
     const progressBar = document.querySelector(".progress-bar");
 
-    // Hide all slides initially
     slides.forEach(slide => slide.style.display = "none");
 
-    // Increment slide index (loop back to start if at the end)
     slideIndex++;
     if (slideIndex > slides.length) { slideIndex = 1; }
 
-    // Display the current slide and reset progress bar
     slides[slideIndex - 1].style.display = "block";
     progressBar.style.width = "0%";
 
-    // Animate the progress bar over the duration of the slide display
     let width = 0;
     progressInterval = setInterval(() => {
         width += 1;
@@ -76,18 +57,35 @@ function showSlides() {
         if (width >= 100) {
             clearInterval(progressInterval);
         }
-    }, 50); // 5000ms / 100 steps
+    }, 50);
 
-    // Move to the next slide after 5 seconds, resetting the interval
     setTimeout(() => {
         clearInterval(progressInterval);
         showSlides();
-    }, 5000); // Display each slide for 5 seconds
+    }, 5000);
 }
 
 // Manual navigation controls for slideshow
 function changeSlide(n) {
-    clearTimeout(progressInterval); // Stop auto-switching
-    slideIndex += n - 1; // Adjust slide index
-    showSlides(); // Show next or previous slide
+    clearTimeout(progressInterval);
+    slideIndex += n - 1;
+    showSlides();
 }
+
+// Smooth scroll progress bar update
+window.onscroll = function() {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.querySelector(".scroll-progress").style.width = scrolled + "%";
+};
+
+// Show Floating Action Button on scroll down
+window.addEventListener("scroll", () => {
+    const fab = document.querySelector(".fab");
+    if (window.scrollY > 200) {
+        fab.style.display = "block";
+    } else {
+        fab.style.display = "none";
+    }
+});
