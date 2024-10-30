@@ -21,7 +21,7 @@ header {
     text-align: center;
 }
 
-/* Logo styles */
+/* Logo styles (without rotation) */
 header img {
     height: 50px;
     transition: transform 0.3s;
@@ -48,7 +48,7 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    position: relative;
+    position: relative; /* For dropdown */
 }
 
 nav ul li a {
@@ -137,61 +137,6 @@ main {
     text-align: center;
 }
 
-/* Center the table */
-.table-container {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-}
-
-table {
-    width: 80%;
-    border-collapse: collapse;
-    background-color: black;
-    text-align: left;
-}
-
-table th, table td {
-    padding: 8px;
-    border: 1px solid grey;
-    color: white;
-    font-size: 14px;
-}
-
-table thead th {
-    background-color: #333;
-    cursor: pointer;
-}
-
-table tr:hover {
-    background-color: #555;
-}
-
-/* Style for the filter dropdown */
-.filter-dropdown {
-    background-color: red;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin: 10px;
-    transition: background-color 0.3s;
-}
-
-.filter-dropdown:hover {
-    background-color: darkred;
-}
-
-/* Footer styles */
-footer {
-    background-color: red;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-}
-
 /* Slideshow container */
 .slideshow-container {
     position: relative;
@@ -206,6 +151,7 @@ footer {
     animation: fadeSlide 1.5s;
 }
 
+/* Fading animation for slideshow images */
 @keyframes fadeSlide {
     from { opacity: 0.4 }
     to { opacity: 1 }
@@ -243,6 +189,38 @@ footer {
     left: 10px;
 }
 
+/* Table styling with hover effect */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: black;
+}
+
+table th, table td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid grey;
+    color: white;
+    font-size: 14px;
+    cursor: pointer; /* Makes columns interactive for sorting */
+}
+
+table thead th {
+    background-color: #333;
+}
+
+table tr:hover {
+    background-color: #555;
+}
+
+/* Footer styles */
+footer {
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     nav ul {
@@ -256,12 +234,15 @@ footer {
         font-size: 16px;
     }
 
-    .table-container {
-        padding: 0;
+    .tab {
+        flex-direction: column;
+        align-items: center;
     }
 
     table {
-        width: 100%;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
     }
 
     table th, table td {
@@ -275,7 +256,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .filter-dropdown {
+    .tab button {
         font-size: 14px;
         padding: 8px 15px;
     }
@@ -283,11 +264,6 @@ footer {
     table th, table td {
         padding: 4px;
         font-size: 10px;
-    }
-
-    .tab button {
-        font-size: 14px;
-        padding: 8px 15px;
     }
 }
 
