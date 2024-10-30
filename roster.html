@@ -36,13 +36,13 @@
             const table = document.getElementById("rosterTable");
             const rows = table.getElementsByTagName("tr");
             for (let i = 1; i < rows.length; i++) {
-                const roleCell = rows[i].getElementsByTagName("td")[1]; // Adjusted column index for role
+                const roleCell = rows[i].getElementsByTagName("td")[1];
                 if (roleCell) {
                     const roleText = roleCell.textContent || roleCell.innerText;
                     if (filter === "" || roleText.toLowerCase().includes(filter)) {
-                        rows[i].style.display = ""; // Show row
+                        rows[i].style.display = "";
                     } else {
-                        rows[i].style.display = "none"; // Hide row
+                        rows[i].style.display = "none";
                     }
                 }
             }
@@ -68,9 +68,9 @@
     <main>
         <h2>Team Roster</h2>
 
-        <!-- Filter dropdown -->
+        <!-- Filter dropdown styled to match the theme -->
         <label for="roleFilter">Filter by Role:</label>
-        <select id="roleFilter" onchange="filterTable()">
+        <select id="roleFilter" class="filter-dropdown" onchange="filterTable()">
             <option value="">All</option>
             <option value="Captain">Captain</option>
             <option value="Vice-Captain">Vice Captain</option>
@@ -78,39 +78,40 @@
             <option value="Batsman">Batsman</option>
             <option value="Bowler">Bowler</option>
             <option value="All-rounder">All-rounder</option>
-            <option value="Player">Player</option>
         </select>
 
-        <!-- Table with sortable columns -->
-        <table id="rosterTable">
-            <thead>
-                <tr>
-                    <th onclick="sortTable(0)">Player Name</th>
-                    <th onclick="sortTable(1)">Role</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Farhan Pervez</td><td>Captain</td></tr>
-                <tr><td>Sulman Sheikh</td><td>Vice-Captain, Wicket Keeper</td></tr>
-                <tr><td>Shahbaz Khattar</td><td>Batsman</td></tr>
-                <tr><td>Shahood Ahmed</td><td>Bowler</td></tr>
-                <tr><td>Rabi Arif</td><td>Batsman</td></tr>
-                <tr><td>Iqbal Usman</td><td>Batsman</td></tr>
-                <tr><td>Mahmood Bilal</td><td>All-Rounder</td></tr>
-                <tr><td>Raja Shakeel</td><td>Bowler</td></tr>
-                <tr><td>Nauman Malik</td><td>All-Rounder</td></tr>
-                <tr><td>Kamal Sarna</td><td>Batsman</td></tr>
-                <tr><td>Shahbaz Haider</td><td>Batsman</td></tr>
-                <tr><td>Aamir Nazir</td><td>All-Rounder</td></tr>
-                <tr><td>Khurram Jarral</td><td>Batsman</td></tr>
-                <tr><td>Abhinav Arora</td><td>All-Rounder</td></tr>
-                <tr><td>Sultan Sheikh</td><td>All-Rounder</td></tr>
-                <tr><td>Khurshid Sheikh</td><td>Batsman</td></tr>
-                <tr><td>Karan Baath</td><td>Bowler</td></tr>
-                <tr><td>Usman Khawaja</td><td>Batsman</td></tr>
-                <tr><td>Jawad Hussain</td><td>Batsman</td></tr>
-            </tbody>
-        </table>
+        <!-- Centered Table -->
+        <div class="table-container">
+            <table id="rosterTable">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)">Player Name</th>
+                        <th onclick="sortTable(1)">Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Farhan Pervez</td><td>Captain</td></tr>
+                    <tr><td>Sulman Sheikh</td><td>Vice-Captain, Wicket Keeper</td></tr>
+                    <tr><td>Shahbaz Khattar</td><td>Batsman</td></tr>
+                    <tr><td>Shahood Ahmed</td><td>Bowler</td></tr>
+                    <tr><td>Rabi Arif</td><td>Batsman</td></tr>
+                    <tr><td>Iqbal Usman</td><td>Batsman</td></tr>
+                    <tr><td>Mahmood Bilal</td><td>All-Rounder</td></tr>
+                    <tr><td>Raja Shakeel</td><td>Bowler</td></tr>
+                    <tr><td>Nauman Malik</td><td>All-Rounder</td></tr>
+                    <tr><td>Kamal Sarna</td><td>Batsman</td></tr>
+                    <tr><td>Shahbaz Haider</td><td>Batsman</td></tr>
+                    <tr><td>Aamir Nazir</td><td>All-Rounder</td></tr>
+                    <tr><td>Khurram Jarral</td><td>Batsman</td></tr>
+                    <tr><td>Abhinav Arora</td><td>All-Rounder</td></tr>
+                    <tr><td>Sultan Sheikh</td><td>All-Rounder</td></tr>
+                    <tr><td>Khurshid Sheikh</td><td>Batsman</td></tr>
+                    <tr><td>Karan Baath</td><td>Bowler</td></tr>
+                    <tr><td>Usman Khawaja</td><td>Batsman</td></tr>
+                    <tr><td>Jawad Hussain</td><td>Batsman</td></tr>
+                </tbody>
+            </table>
+        </div>
     </main>
     <footer>
         <p>Contact us at <a href="mailto:info@wildrosecc.com">info@wildrosecc.com</a>.</p>
