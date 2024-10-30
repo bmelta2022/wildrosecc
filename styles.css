@@ -21,20 +21,10 @@ header {
     text-align: center;
 }
 
-/* Logo animation with 360 rotation */
+/* Logo styles (without rotation) */
 header img {
     height: 50px;
-    animation: logoSpin 3s linear infinite;
     transition: transform 0.3s;
-}
-
-@keyframes logoSpin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
 }
 
 header img:hover {
