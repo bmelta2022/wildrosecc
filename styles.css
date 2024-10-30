@@ -1,4 +1,4 @@
-/* Define colors as variables */
+/* Define colors as variables for consistency */
 :root {
     --primary-color: red;
     --secondary-color: darkred;
@@ -29,7 +29,6 @@ header {
     text-align: center;
 }
 
-/* Logo styles (without rotation) */
 header img {
     height: 50px;
     transition: transform 0.3s;
@@ -56,7 +55,7 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    position: relative;
+    position: relative; /* For dropdown */
 }
 
 nav ul li a {
@@ -175,6 +174,17 @@ main {
     transition: width 0.3s ease-out;
 }
 
+/* Facebook Feed Styles */
+.facebook-feed {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.facebook-feed .fb-page {
+    width: 100% !important;
+}
+
 /* Navigation controls */
 .prev, .next {
     cursor: pointer;
@@ -261,6 +271,11 @@ footer {
 
     header img {
         height: 35px;
+    }
+
+    /* Ensure Facebook feed takes full width on mobile */
+    .facebook-feed .fb-page {
+        width: 100% !important;
     }
 }
 
